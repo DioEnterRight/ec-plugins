@@ -1,0 +1,19 @@
+EC Twitch 1.1
+Copyright (c) 2026 Dexter. All rights reserved.
+
+Use
+You may download EC Twitch and use it with EffectCraft, including in paid work.
+
+Not allowed without the owner's written permission
+Redistributing, reselling or republishing the plug-in, the presets or the source
+code, in whole or in part, or presenting them as your own.
+
+Independent work
+EC Twitch is an independent plug-in. It was written from public descriptions of
+how Video Copilot's Twitch behaves. It contains no code or assets from Video
+Copilot and is not affiliated with or endorsed by Video Copilot. Twitch is a
+product of its owner. EffectCraft is a separate project and this plug-in is not
+part of it.
+
+No warranty
+EC Twitch is provided as is, without warranty of any kind.
