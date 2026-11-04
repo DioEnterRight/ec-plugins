@@ -133,7 +133,7 @@
       stage.style.setProperty('--g',g.toFixed(3));stage.style.setProperty('--px',(cx*100).toFixed(1)+'%');stage.style.setProperty('--py',(cy*100).toFixed(1)+'%');
     }));
   });
-  // Outline Glow: cycles through the seven Glow Types
+  // EC Outline Glow: cycles through the seven Glow Types
   var OGT=[{n:'Neon',c:'#08B8FF',c2:'#5A0DFF',fl:.05,j:0,h:0},{n:'Electric',c:'#A8ECFF',c2:'#2F6BFF',fl:.35,j:2.2,h:0},{n:'Water',c:'#38DCFF',c2:'#0057FF',fl:.05,j:0,w:1,h:0},
     {n:'Galaxy',c:'#C08AFF',c2:'#FF3D9A',fl:.12,j:0,h:0},{n:'Ice',c:'#D4F7FF',c2:'#6FCBFF',fl:.03,j:0,h:0},{n:'Fire',c:'#FFB020',c2:'#FF3D00',fl:.25,j:0,f:1,h:0},{n:'Plasma',c:'#FF4FD8',c2:'#5A0DFF',fl:.08,j:0,h:1}];
   $('[data-live="og"]').forEach(function(stage){
@@ -149,7 +149,7 @@
       svg.style.transform='translate('+dx.toFixed(2)+'px,'+dy.toFixed(2)+'px) skewX('+sk.toFixed(2)+'deg)';
     }));
   });
-  // Slizzy Neon: three-colour neon with electric flicker
+  // EC Neon Outline: three-colour neon with electric flicker
   $('[data-live="sn"]').forEach(function(stage){
     var svg=stage.querySelector('svg'), drop=0;
     if(reduce){svg.style.setProperty('--g','.9');return}

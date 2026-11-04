@@ -6,7 +6,7 @@ window.EC_STORE = {
   products: {
     "twitch": { issue: 1, zip: "EC_Twitch_v1.1.zip" },
     "deep-glow-2": { issue: 2, zip: "EC_Deep_Glow_2_v4.1.1.zip" },
-    "outline-glow": { issue: 3, zip: "Outline_Glow_v1.4.0.zip" },
-    "slizzy-neon": { issue: 4, zip: "Slizzy_Neon_Outline_v3.2.0.zip" }
+    "outline-glow": { issue: 3, zip: "EC_Outline_Glow_v1.4.0.zip" },
+    "neon-outline": { issue: 4, zip: "EC_Neon_Outline_v3.2.0.zip" }
   }
 };
