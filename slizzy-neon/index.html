@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slizzy Neon Outline v3 for EffectCraft</title>
+<meta name="description" content="Slizzy Neon Outline v3 draws a smooth three-colour neon line with electric flicker around the edges of a layer in EffectCraft. Download and step-by-step install instructions.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B1D3F'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23FFB347' opacity='.35'/%3E%3Ccircle cx='16' cy='16' r='4.5' fill='%23FFF6E0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Spline+Sans+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/store.css">
+</head>
+<body data-accent="sn">
+<a class="skip" href="#main">Skip to the content</a>
+<header class="bar">
+  <a class="brand" href="../">EC Plug-ins<small>by DioEnterRight</small></a>
+  <nav aria-label="Plug-ins"><a href="../twitch/">Twitch</a><a href="../deep-glow-2/">Deep Glow 2</a><a href="../outline-glow/">Outline Glow</a><a href="../slizzy-neon/" aria-current="page">Slizzy Neon</a></nav>
+</header>
+<div style="display:contents">
+<header class="head">
+  <div>
+    <a class="back" href="../">← All plug-ins</a>
+    <h1>Slizzy Neon Outline v3</h1>
+    <p class="pitch">A smooth neon line with a three-colour glow and electric flicker, drawn around the edges of your layer.</p>
+    <div class="buy">
+      <a class="btn" data-dl="slizzy-neon" href="../downloads/Slizzy_Neon_Outline_v3.2.0.zip" download>Download zip (15 KB)</a>
+      <span class="meta">Version 3.2.0 · Stylize · made by Slizzy, upgraded by DioEnterRight</span>
+    </div>
+    <ul class="stats" aria-label="Slizzy Neon Outline v3 numbers from GitHub"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg><b data-stat="downloads" data-product="slizzy-neon">—</b> downloads</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><b data-stat="likes" data-product="slizzy-neon">—</b> likes</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><b data-stat="comments" data-product="slizzy-neon">—</b> comments</li></ul>
+    <div class="likebar">
+      <a class="btn ghost sm" data-like="slizzy-neon" href="https://github.com/DioEnterRight/ec-plugins/issues/4" target="_blank" rel="noopener"><svg width="16" height="16" style="vertical-align:-3px;margin-right:.4rem;fill:none;stroke:currentColor;stroke-width:1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Like on GitHub</a>
+      <a class="btn ghost sm" href="#comments">Read comments</a>
+      <small>Likes and comments live on GitHub. Click the thumbs-up or heart on the first post. A free GitHub account is needed.</small>
+    </div>
+  </div>
+  <a class="stage sn" data-live="sn" href="#install" aria-label="Live preview of Slizzy Neon Outline">
+    <svg class="neon" viewBox="0 0 640 240" aria-hidden="true"><defs><linearGradient id="sn-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#05B8FF"/><stop offset=".5" stop-color="#8A2BFF"/><stop offset="1" stop-color="#FF0A7A"/></linearGradient></defs><text x="320" y="165" text-anchor="middle" stroke="url(#sn-grad)">Neon</text></svg>
+    <p class="cap" aria-hidden="true">Electric Flicker <b data-fl>8</b></p>
+  </a>
+</header>
+<div class="shell">
+<nav class="rail" aria-label="On this page"><a href="#install">Install the plug-in</a><a href="#use">Add it to a layer</a><a href="#animate">Make it animate</a><a href="#looks">Starting looks</a><a href="#controls">Controls</a><a href="#speed">Speed</a><a href="#own">Save your own preset</a><a href="#trouble">If something goes wrong</a><a href="#about">About this build</a><a href="#comments">Comments</a></nav>
+<main id="main">
+
+<section id="install">
+  <h2>Install the plug-in</h2>
+  <p>The download is one zip. Inside are <code>INSTALL_WINDOWS.bat</code>, a <code>1_Plugin</code> folder, a <code>CHANGELOG.txt</code> and an <code>INSTALL.txt</code> with these same steps. There is only one file to install. Unzip the whole zip first. Don't run anything from inside the zip.</p>
+  
+  <h3>Fastest on Windows: double-click the installer</h3>
+  <p>Inside the unzipped folder, double-click <code>INSTALL_WINDOWS.bat</code>. It makes the Plug-ins folder if it is missing and copies the plug-in. Then restart EffectCraft. If Windows asks whether to run the file, click <strong>Run</strong>.</p>
+  <h3>Or install by hand</h3>
+  <div class="callout warn"><p><strong>EffectCraft doesn't make the Plug-ins folder for you.</strong> If it isn't there, make it yourself. It must be named exactly <code>Plug-ins</code>, with a capital P and a dash.</p></div>
+  <ol class="steps">
+    <li>Open File Explorer. Click the address bar, type <code>%APPDATA%</code> and press Enter.</li>
+    <li>Open the <strong>EffectCraft</strong> folder. If there isn't one, start EffectCraft once and close it, or make a folder named <code>EffectCraft</code>.</li>
+    <li>Inside it, make a new folder named <code>Plug-ins</code>.</li>
+    <li>Copy <code>1_Plugin\ec_slizzy_neon.wasm</code> into that folder.</li>
+    <li>Restart EffectCraft. It loads every <code>.wasm</code> file in that folder when it starts. Search for <strong>Slizzy Neon Outline v3</strong> in Effects &amp; Presets. It sits under <strong>Stylize</strong>.</li>
+  </ol>
+  <p>The full Plug-ins folder for each system:</p>
+  <div class="paths"><div class="os"><h3>Windows</h3><div class="pathrow"><code>%APPDATA%\EffectCraft\Plug-ins</code><button type="button" class="copy" data-copy="%APPDATA%\EffectCraft\Plug-ins" aria-label="Copy Windows path">Copy</button></div></div><div class="os"><h3>macOS</h3><div class="pathrow"><code>~/Library/Application Support/EffectCraft/Plug-ins</code><button type="button" class="copy" data-copy="~/Library/Application Support/EffectCraft/Plug-ins" aria-label="Copy macOS path">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>~/.config/effectcraft/Plug-ins</code><button type="button" class="copy" data-copy="~/.config/effectcraft/Plug-ins" aria-label="Copy Linux path">Copy</button></div></div></div>
+  <p>On macOS or Linux, run this in Terminal inside the unzipped folder. It makes the folder and copies the file:</p>
+  <div class="paths"><div class="os"><h3>macOS</h3><div class="pathrow"><code>mkdir -p ~/Library/Application\ Support/EffectCraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_slizzy_neon.wasm ~/Library/Application\ Support/EffectCraft/Plug-ins/</code><button type="button" class="copy" data-copy="mkdir -p ~/Library/Application\ Support/EffectCraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_slizzy_neon.wasm ~/Library/Application\ Support/EffectCraft/Plug-ins/" aria-label="Copy the macOS command">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>mkdir -p ~/.config/effectcraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_slizzy_neon.wasm ~/.config/effectcraft/Plug-ins/</code><button type="button" class="copy" data-copy="mkdir -p ~/.config/effectcraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_slizzy_neon.wasm ~/.config/effectcraft/Plug-ins/" aria-label="Copy the Linux command">Copy</button></div></div></div>
+  <p>On the Windows portable build, use <code>EffectCraftData\Plug-ins</code> next to <code>EffectCraft.exe</code>. The installer is for the normal installed EffectCraft only.</p>
+  <div class="callout"><p>Want to try it before copying anything? Choose <strong>Effect &gt; Load Effect Plug-in…</strong> and pick <code>ec_slizzy_neon.wasm</code>. It loads right away.</p></div>
+</section>
+
+<section id="use">
+  <h2>Add it to a layer</h2>
+  <ol class="steps">
+    <li>Select your layer. Text, shapes, logos and footage with clear edges work best.</li>
+    <li>Double-click <strong>Slizzy Neon Outline v3</strong> in Effects &amp; Presets, under Stylize. You can also drag it onto the layer.</li>
+    <li>The neon outline appears on the edges of your layer.</li>
+  </ol>
+  <div class="callout warn"><p><strong>By default you see only the glowing outline. Your layer itself is hidden.</strong> To see your layer under the glow, set <strong>Blend with Original</strong> to 100.</p></div>
+  <div class="scroll"><table class="ref">
+    <thead><tr><th scope="col">Start with</th><th scope="col">Default</th><th scope="col">What to do with it</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Glow Strength</th><td>82</td><td>Brightness of the glow.</td></tr>
+      <tr><th scope="row">Outline Thickness</th><td>3</td><td>Width of the neon line.</td></tr>
+      <tr><th scope="row">Glow Threshold</th><td>18</td><td>Lower it if some edges don't glow. Raise it if too much of the picture glows.</td></tr>
+      <tr><th scope="row">Glow Colour 1, 2, 3</th><td>Cyan, purple, pink</td><td>The three colours blended along the line. Use Custom Multicolour is on by default.</td></tr>
+      <tr><th scope="row">Blend with Original</th><td>0</td><td>0 shows only the glow. 100 shows your layer under it.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><p>Not sure what it picks up? Set <strong>View</strong> to <strong>Edge Map</strong>, then set it back to <strong>Final</strong>.</p></div>
+</section>
+
+<section id="animate">
+  <h2>Make it animate</h2>
+  <div class="callout warn"><p><strong>The flicker and moving styles don't move on their own.</strong> EffectCraft only re-renders a plug-in when one of its settings changes, so it needs a clock. Do this once on every layer you use it on.</p></div>
+  <ol class="steps">
+    <li>In Effect Controls, find <strong>Animation Time (s)</strong>, at the bottom of the list.</li>
+    <li>Select it and choose <strong>Animation &gt; Add Expression</strong>.</li>
+    <li>Paste this line exactly:</li>
+  </ol>
+  <div class="paths"><div class="os"><h3>Expression</h3><div class="pathrow"><code>time - thisLayer.startTime</code><button type="button" class="copy" data-copy="time - thisLayer.startTime" aria-label="Copy the Expression command">Copy</button></div></div></div>
+  <p>Now the flicker and styles move when you play the timeline. Without it, the glow stays frozen on one look.</p>
+</section>
+
+<section id="looks">
+  <h2>Starting looks</h2>
+  <p>There are no preset files. Type these in, leave everything else at its default, and adjust by eye.</p>
+  <div class="scroll"><table class="recipes">
+    <thead><tr><th scope="col">Look</th><th scope="col">Set these</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Neon over your footage</th><td>Blend with Original 100, Glow Operation Screen</td></tr>
+      <tr><th scope="row">Electric wire</th><td>Edge Jitter 40, Electric Flicker 40</td></tr>
+      <tr><th scope="row">Single-colour tube</th><td>Use Custom Multicolour off, then pick Glow Colour 1</td></tr>
+      <tr><th scope="row">Colours that travel</th><td>Colour Mode Time Cycle, Style Speed 150</td></tr>
+      <tr><th scope="row">Outside only</th><td>Glow Side Outside</td></tr>
+    </tbody>
+  </table></div>
+  <p>Remember the expression from <a href="#animate">Make it animate</a> for anything that flickers or moves.</p>
+</section>
+
+<section id="controls">
+  <h2>Controls</h2>
+  <p>28 controls, grouped here by job. In Effect Controls they are one flat list.</p>
+  <details open><summary>Glow</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Glow Strength</th><td>0 to 100</td><td>82</td><td>Brightness of the glow. 0 turns the glow off.</td></tr>
+<tr><th scope="row">Glow Spread</th><td>2 to 100</td><td>36</td><td>How far the glow reaches out from the edge.</td></tr>
+<tr><th scope="row">Glow Falloff</th><td>0 to 100</td><td>50</td><td>How the glow fades. Low keeps it tight to the edge. High puts more light into the wide outer halo.</td></tr>
+<tr><th scope="row">Glow Aspect (H / V)</th><td>-100 to 100</td><td>0</td><td>Stretches the glow. Positive values stretch it sideways, negative values up and down.</td></tr>
+<tr><th scope="row">Glow Side</th><td>Both, Outside, Inside</td><td>Both</td><td>Glow on both sides of the edge, only outside the shape, or only inside it.</td></tr>
+<tr><th scope="row">Glow Operation</th><td>Add, Screen, Over</td><td>Add</td><td>How the glow is added. Add is brightest. Screen is softer on bright areas. Over covers what&#x27;s underneath.</td></tr>
+<tr><th scope="row">Blend with Original</th><td>0 to 100</td><td>0</td><td>0 shows only the glow and hides your layer. 100 shows your layer under the glow.</td></tr></tbody></table></div></details>
+<details><summary>Colour</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Glow Colour 1</th><td>Color</td><td>#05B8FF</td><td>First glow colour. With Use Custom Multicolour off, this is the only colour used.</td></tr>
+<tr><th scope="row">Glow Colour 2</th><td>Color</td><td>#590DFF</td><td>Second colour of the blend. Used when Use Custom Multicolour is on.</td></tr>
+<tr><th scope="row">Glow Colour 3</th><td>Color</td><td>#FF0A7A</td><td>Third colour of the blend. Used when Use Custom Multicolour is on.</td></tr>
+<tr><th scope="row">Use Custom Multicolour</th><td>On or off</td><td>On</td><td>On blends Glow Colour 1, 2 and 3 across the layer, in the direction set by Colour Mode. Off uses Glow Colour 1 only.</td></tr>
+<tr><th scope="row">Colour Mode</th><td>Horizontal, Vertical, Angle, Radial, Core to Outer, Time Cycle</td><td>Horizontal</td><td>Direction of the colour blend when Use Custom Multicolour is on. Core to Outer runs the colours from the line out into the halo. Time Cycle moves the colours over time.</td></tr>
+<tr><th scope="row">Gradient Angle</th><td>Degrees</td><td>0 degrees</td><td>Direction of the colour blend in Angle mode.</td></tr>
+<tr><th scope="row">Colour Offset</th><td>-100 to 100</td><td>0</td><td>Slides the colours along the blend.</td></tr>
+<tr><th scope="row">Core Colour</th><td>Color</td><td>#FFFFFF</td><td>Colour of the line on the edge. Core Brightness sets how much of it is used.</td></tr></tbody></table></div></details>
+<details><summary>Edge and line</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Edge Source</th><td>Luma + Alpha, Alpha Only, Luma Only, Colour</td><td>Luma + Alpha</td><td>What counts as an edge. Luma + Alpha is the default. Alpha Only follows the layer&#x27;s outline, Luma Only follows changes in brightness, and Colour follows any change in colour.</td></tr>
+<tr><th scope="row">Glow Threshold</th><td>1 to 80</td><td>18</td><td>How strong an edge must be to glow. Lower values find more edges.</td></tr>
+<tr><th scope="row">Edge Smoothness</th><td>0 to 100</td><td>55</td><td>Softness of the line&#x27;s edges. Higher is softer.</td></tr>
+<tr><th scope="row">Outline Thickness</th><td>1 to 8</td><td>3</td><td>Width of the bright line on the edge.</td></tr>
+<tr><th scope="row">Neon Core Brightness</th><td>0 to 100</td><td>100</td><td>Brightness of the line on the edge, and how much of the Core Colour it takes.</td></tr></tbody></table></div></details>
+<details><summary>Edge Jitter</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Edge Jitter</th><td>0 to 100</td><td>0</td><td>Makes the line wobble like electricity. 0 is off. Needs the Animation Time (s) expression to move.</td></tr>
+<tr><th scope="row">Style Scale</th><td>4 to 200</td><td>40</td><td>Size of the wobbles.</td></tr>
+<tr><th scope="row">Style Speed</th><td>0 to 400</td><td>100</td><td>How fast the pattern moves. Also sets the speed of Time Cycle colours.</td></tr></tbody></table></div></details>
+<details><summary>Flicker and time</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Electric Flicker</th><td>0 to 100</td><td>8</td><td>How much the glow flickers. Needs the Animation Time (s) expression to move.</td></tr>
+<tr><th scope="row">Flicker Rate (Hz)</th><td>1 to 60</td><td>12</td><td>Flickers per second.</td></tr>
+<tr><th scope="row">Random Seed</th><td>0 to 1000</td><td>0</td><td>Changes the random flicker and pattern.</td></tr>
+<tr><th scope="row">Animation Time (s)</th><td>-100000 to 100000</td><td>0</td><td>The clock for flicker and movement. Add the expression time - thisLayer.startTime so it moves. Any value other than 0 overrides the layer time.</td></tr></tbody></table></div></details>
+<details><summary>View</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">View</th><td>Final, Edge Map, Stroke Only</td><td>Final</td><td>Final shows the result. Edge Map shows which edges were found. Stroke Only shows just the line.</td></tr></tbody></table></div></details>
+</section>
+
+<section id="speed">
+  <h2>Speed</h2>
+  <p>In testing, a 1080p frame took about 0.7 seconds in a browser's engine. Inside EffectCraft it can be slower. Electric is the slowest style, at about twice the cost of Neon. Preview at half resolution while you design.</p>
+</section>
+<section id="own">
+  <h2>Save your own preset</h2>
+  <div class="callout warn"><p><strong>The Presets folder isn't there until you make it.</strong> Installing EffectCraft doesn't create it. EffectCraft reads presets from exactly this folder:</p></div>
+  <div class="paths"><div class="os"><h3>Windows</h3><div class="pathrow"><code>%USERPROFILE%\Documents\EffectCraft\Presets</code><button type="button" class="copy" data-copy="%USERPROFILE%\Documents\EffectCraft\Presets" aria-label="Copy Windows path">Copy</button></div></div><div class="os"><h3>macOS</h3><div class="pathrow"><code>~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="~/Documents/EffectCraft/Presets" aria-label="Copy macOS path">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="~/Documents/EffectCraft/Presets" aria-label="Copy Linux path">Copy</button></div></div></div>
+  <p>On Windows that means <code>C:\Users\&lt;your user name&gt;\Documents\EffectCraft\Presets</code>.</p>
+  <h3>Make the Presets folder on Windows</h3>
+  <ol class="steps">
+    <li>Open File Explorer. Click the address bar, type <code>%USERPROFILE%</code> and press Enter. You're now in <code>C:\Users\&lt;your user name&gt;</code>.</li>
+    <li>Open <strong>Documents</strong>. If there's no Documents folder there, make one named <code>Documents</code>.</li>
+    <li>Inside Documents, make a new folder named <code>EffectCraft</code>.</li>
+    <li>Inside EffectCraft, make a new folder named <code>Presets</code>.</li>
+  </ol>
+  <div class="callout"><p><strong>OneDrive:</strong> even if Windows keeps your Documents in OneDrive, EffectCraft still looks in <code>C:\Users\&lt;you&gt;\Documents</code>, not in <code>OneDrive\Documents</code>. Step 1 takes you to the right place.</p><p>To check, open the Effects &amp; Presets panel menu, choose <strong>Copy Presets Folder Path</strong>, and paste it into the File Explorer address bar. That's the folder EffectCraft reads.</p></div>
+  <p>On macOS or Linux, this Terminal line makes it:</p>
+  <div class="paths"><div class="os"><h3>macOS / Linux</h3><div class="pathrow"><code>mkdir -p ~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="mkdir -p ~/Documents/EffectCraft/Presets" aria-label="Copy the macOS / Linux command">Copy</button></div></div></div>
+  <h3>Save it</h3>
+  <ol class="steps">
+    <li>Set up Slizzy Neon Outline v3 on a layer the way you like it.</li>
+    <li>Select <strong>Slizzy Neon Outline v3</strong> in Effect Controls.</li>
+    <li>Choose <strong>Animation &gt; Save Animation Preset…</strong> and save the file in the Presets folder.</li>
+    <li>In the Effects &amp; Presets panel menu, choose <strong>Refresh List</strong>. Your preset shows up under <strong>* Animation Presets</strong>.</li>
+  </ol>
+</section>
+<section id="trouble">
+  <h2>If something goes wrong</h2>
+  <dl class="faq-list">
+    <dt>The glow doesn't flicker or move.</dt>
+    <dd>Add the expression from <a href="#animate">Make it animate</a> to Animation Time (s).</dd>
+    <dt>There's no glow at all.</dt>
+    <dd>Lower the threshold, raise Glow Strength, and check that View is set to Final. Set View to Edge Map to see which edges it finds.</dd>
+    <dt>Slizzy Neon Outline v3 isn't in the Effects list.</dt>
+    <dd>The Plug-ins folder must exist and be named exactly <code>Plug-ins</code>. See <a href="#install">Install the plug-in</a>, then restart EffectCraft.</dd>
+    <dt>I see "an effect with this id is already registered".</dt>
+    <dd>The plug-in is already loaded, usually because it is in the Plug-ins folder and you also loaded it from the menu. Nothing to fix.</dd>
+    <dt>The glow is too strong on bright footage.</dt>
+    <dd>Set Glow Operation to Screen, or lower Glow Strength.</dd>
+    <dt>It doesn't work in the web version.</dt>
+    <dd>EffectCraft's web version can't run plug-ins. Use the desktop app or the CLI.</dd>
+  </dl>
+</section>
+<section id="about">
+  <h2>About this build</h2>
+  <p>Slizzy Neon Outline is made by <strong>Slizzy</strong> and upgraded by <strong>DioEnterRight</strong>. Old projects still load, because the original controls keep their order and defaults and every new control comes after them.</p>
+  <ul>
+    <li><strong>Fixed:</strong> renders that could hang or crash with extreme settings, line width that changed with the composition's resolution, hard stair-stepped lines, glow that wrapped around the layer edges, and memory that ran out at higher resolutions.</li>
+    <li><strong>Added:</strong> Edge Source, Glow Side, Glow Operation, Falloff, Aspect, Core Colour, Colour Mode, Flicker Rate, Seed, View and Animation Time (s).</li>
+    <li><strong>Not tested inside EffectCraft yet:</strong> the flicker animation with the expression above. It was tested in the same plug-in sandbox EffectCraft uses, outside the app.</li>
+  </ul>
+  <p>The full list is in <code>CHANGELOG.txt</code> inside the zip.</p>
+</section>
+<section id="comments">
+  <h2>Comments</h2>
+  <p>People who tried it can leave a comment or a like here. Comments are posted on GitHub with a free GitHub account.</p>
+  <p class="cstate" id="cstate" role="status">Loading comments…</p>
+  <ul class="clist" id="clist" data-product="slizzy-neon"></ul>
+  <div id="utter" data-product="slizzy-neon"></div>
+  <div class="cbtns">
+    <a class="btn sm" data-comment-link="slizzy-neon" href="https://github.com/DioEnterRight/ec-plugins/issues/4" target="_blank" rel="noopener">Write a comment on GitHub</a>
+    <a class="btn ghost sm" data-thread="slizzy-neon" href="https://github.com/DioEnterRight/ec-plugins/issues/4" target="_blank" rel="noopener">Open the GitHub thread</a>
+  </div>
+</section>
+<section id="verify">
+  <h2>Check your download</h2>
+  <p>The SHA-256 of <code>Slizzy_Neon_Outline_v3.2.0.zip</code> is:</p>
+  <p class="sha">bb1e13efc427cfb79126159b2920ffef4198de5d4f8d8535faab1576f062b1c5</p>
+  <p>On Windows, run <code>Get-FileHash Slizzy_Neon_Outline_v3.2.0.zip</code> in PowerShell and compare.</p>
+</section>
+
+</main>
+</div>
+</div>
+<footer>
+  <div class="in">
+    <p>Store by DioEnterRight. EC Twitch and EC Deep Glow 2 are made by DioEnterRight, © 2026, all rights reserved: free to download and use with EffectCraft, including in paid work, but not to redistribute or resell. Outline Glow and Slizzy Neon Outline are made by Slizzy and upgraded by DioEnterRight.</p>
+    <p>Independent work. Not affiliated with or endorsed by Video Copilot, Deep Glow or its makers, or EffectCraft. The names are used only to say what each effect is inspired by.</p>
+    <p>Download, like and comment numbers are read live from this project's GitHub page. There is no database.</p>
+  </div>
+</footer>
+<script src="../assets/config.js"></script>
+<script src="../assets/store.js"></script>
+</body>
+</html>

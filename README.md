@@ -6,14 +6,16 @@ Free plug-ins for EffectCraft, with a small store page.
 |---|---|---|
 | EC Twitch | 1.1 | Random hits of blur, color, light, scale, slide and time, with 25 presets |
 | EC Deep Glow 2 | 4.1.1 | HDR glow with a hot core and a long soft halo |
+| Outline Glow | 1.4.0 | Glowing outline with seven Glow Types (made by Slizzy, upgraded by DioEnterRight) |
+| Slizzy Neon Outline v3 | 3.2.0 | Three-colour neon line with electric flicker (made by Slizzy, upgraded by DioEnterRight) |
 
 Each plug-in's page has the full install steps. The zips are in `downloads/`.
 
-(c) 2026 Dexter. All rights reserved. See `LICENSE.txt`.
+EC Twitch and EC Deep Glow 2: (c) 2026 DioEnterRight. All rights reserved. See `LICENSE.txt`.
 
 ## Put it online (about 5 minutes)
 
-1. **GitHub.** In PowerShell, inside this folder, run `./setup.ps1`. It creates the repository `DioEnterRight/ec-plugins`, pushes the files, makes the two comment threads (issues 1 and 2) and uploads each zip as a release.
+1. **GitHub.** In PowerShell, inside this folder, run `./setup.ps1`. It creates the repository `DioEnterRight/ec-plugins`, pushes the files, makes the four comment threads (issues 1 to 4) and uploads each zip as a release.
 2. **Vercel.** Go to vercel.com, choose Add New > Project, import `DioEnterRight/ec-plugins`, set Framework Preset to **Other**, leave Build Command and Output Directory empty, and deploy. There is nothing to build.
 
 If you use a different repository name, change `repo` in `assets/config.js`.
@@ -38,6 +40,13 @@ Good to know:
 ## Comment box inside the page (optional)
 
 Install the utterances app on the repository at github.com/apps/utterances, then set `inlineComments: "utterances"` in `assets/config.js`. A comment box then appears on each plug-in page.
+
+## Add a new plug-in
+
+1. Put its zip in `downloads/`.
+2. Create a GitHub issue for its likes and comments, and note its number.
+3. Add it to `products` in `assets/config.js` with that issue number and the zip's file name, and add its page.
+4. `gh release create <tag> downloads/<zip> -R DioEnterRight/ec-plugins`, or create the release on GitHub and drag the zip in.
 
 ## Release a new version
 

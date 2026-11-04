@@ -1,5 +1,5 @@
 EC Twitch 1.1
-Copyright (c) 2026 Dexter. All rights reserved.
+Copyright (c) 2026 DioEnterRight. All rights reserved.
 
 Use
 You may download EC Twitch and use it with EffectCraft, including in paid work.

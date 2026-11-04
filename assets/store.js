@@ -133,6 +133,32 @@
       stage.style.setProperty('--g',g.toFixed(3));stage.style.setProperty('--px',(cx*100).toFixed(1)+'%');stage.style.setProperty('--py',(cy*100).toFixed(1)+'%');
     }));
   });
+  // Outline Glow: cycles through the seven Glow Types
+  var OGT=[{n:'Neon',c:'#08B8FF',c2:'#5A0DFF',fl:.05,j:0,h:0},{n:'Electric',c:'#A8ECFF',c2:'#2F6BFF',fl:.35,j:2.2,h:0},{n:'Water',c:'#38DCFF',c2:'#0057FF',fl:.05,j:0,w:1,h:0},
+    {n:'Galaxy',c:'#C08AFF',c2:'#FF3D9A',fl:.12,j:0,h:0},{n:'Ice',c:'#D4F7FF',c2:'#6FCBFF',fl:.03,j:0,h:0},{n:'Fire',c:'#FFB020',c2:'#FF3D00',fl:.25,j:0,f:1,h:0},{n:'Plasma',c:'#FF4FD8',c2:'#5A0DFF',fl:.08,j:0,h:1}];
+  $('[data-live="og"]').forEach(function(stage){
+    var svg=stage.querySelector('svg'), pills=$('.pills li',stage), lab=stage.querySelector('[data-type]'), last=-1;
+    if(reduce){if(pills[0])pills[0].style.setProperty('--on','1');return}
+    tickers.push(watch(stage,function(now){
+      var i=Math.floor(now/2400)%OGT.length, T=OGT[i], t=now/1000;
+      if(i!==last){last=i;svg.style.setProperty('--c',T.c);svg.style.setProperty('--c2',T.c2);lab.textContent=T.n;pills.forEach(function(p,k){p.style.setProperty('--on',k===i?'1':'0')})}
+      var g=.85+.1*Math.sin(t*2.1)-(Math.random()<T.fl?Math.random()*.6:0);
+      var dx=T.j?(Math.random()-.5)*T.j:0, dy=T.j?(Math.random()-.5)*T.j:(T.f?-Math.abs(Math.sin(t*9))*1.5:0);
+      var sk=T.w?Math.sin(t*2.4)*3:0;
+      svg.style.setProperty('--g',Math.max(.15,g).toFixed(3));svg.style.setProperty('--h',T.h?((t*90)%360).toFixed(0)+'deg':'0deg');
+      svg.style.transform='translate('+dx.toFixed(2)+'px,'+dy.toFixed(2)+'px) skewX('+sk.toFixed(2)+'deg)';
+    }));
+  });
+  // Slizzy Neon: three-colour neon with electric flicker
+  $('[data-live="sn"]').forEach(function(stage){
+    var svg=stage.querySelector('svg'), drop=0;
+    if(reduce){svg.style.setProperty('--g','.9');return}
+    tickers.push(watch(stage,function(now){
+      var t=now/1000; if(drop>0)drop-=1; else if(Math.random()<.012)drop=2+Math.floor(Math.random()*5);
+      var g=(drop>0?.35+Math.random()*.25:.9+.06*Math.sin(t*7)+(Math.random()-.5)*.08);
+      svg.style.setProperty('--g',g.toFixed(3));
+    }));
+  });
   if(tickers.length){(function loop(now){requestAnimationFrame(loop);tickers.forEach(function(f){f(now)})})(performance.now())}
   if(reduce)$('[data-live-note]').forEach(function(n){n.textContent='Motion is off because your system asks for less of it.'});
 })();

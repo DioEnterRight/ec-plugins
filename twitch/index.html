@@ -16,7 +16,7 @@
 <a class="skip" href="#main">Skip to the content</a>
 <header class="bar">
   <a class="brand" href="../">EC Plug-ins<small>by DioEnterRight</small></a>
-  <nav aria-label="Plug-ins"><a href="../twitch/" aria-current="page">EC Twitch</a><a href="../deep-glow-2/">EC Deep Glow 2</a></nav>
+  <nav aria-label="Plug-ins"><a href="../twitch/" aria-current="page">Twitch</a><a href="../deep-glow-2/">Deep Glow 2</a><a href="../outline-glow/">Outline Glow</a><a href="../slizzy-neon/">Slizzy Neon</a></nav>
 </header>
 <div style="display:contents">
 <header class="head">
@@ -25,7 +25,7 @@
     <h1>EC Twitch</h1>
     <p class="pitch">Random hits of blur, color, light, scale, slide and time. Set one Amount and one Speed, and the six operators fire together.</p>
     <div class="buy">
-      <a class="btn" data-dl="twitch" href="../downloads/EC_Twitch_v1.1.zip" download>Download zip (111 KB)</a>
+      <a class="btn" data-dl="twitch" href="../downloads/EC_Twitch_v1.1.zip" download>Download zip (113 KB)</a>
       <span class="meta">Version 1.1 · 25 presets · EffectCraft desktop and CLI</span>
     </div>
     <ul class="stats" aria-label="EC Twitch numbers from GitHub"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg><b data-stat="downloads" data-product="twitch">—</b> downloads</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><b data-stat="likes" data-product="twitch">—</b> likes</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><b data-stat="comments" data-product="twitch">—</b> comments</li></ul>
@@ -47,26 +47,57 @@
 
 <section id="install">
   <h2>Install the plug-in</h2>
-  <p>The download is one zip. Unzip it and you get a <code>1_Plugin</code> folder, a <code>2_Presets</code> folder and an <code>INSTALL.txt</code> with these same steps.</p>
+  <p>The download is one zip. Inside are <code>INSTALL_WINDOWS.bat</code>, a <code>1_Plugin</code> folder, a <code>2_Presets</code> folder and an <code>INSTALL.txt</code> with these same steps. Unzip the whole zip first. Don't run anything from inside the zip.</p>
+  
+  <h3>Fastest on Windows: double-click the installer</h3>
+  <p>Inside the unzipped folder, double-click <code>INSTALL_WINDOWS.bat</code>. It makes the Plug-ins and Presets folders if they are missing, and copies the plug-in and all 27 presets. Then restart EffectCraft. If Windows asks whether to run the file, click <strong>Run</strong>.</p>
+  <h3>Or install by hand</h3>
+  <div class="callout warn"><p><strong>EffectCraft doesn't make the Plug-ins folder for you.</strong> If it isn't there, make it yourself. It must be named exactly <code>Plug-ins</code>, with a capital P and a dash.</p></div>
   <ol class="steps">
-    <li>Copy <code>1_Plugin/ec_twitch.wasm</code> into EffectCraft's <strong>Plug-ins</strong> folder for your system. Create the folder if it isn't there yet.</li>
-    <li>Restart EffectCraft. It loads every <code>.wasm</code> file in that folder when it starts.</li>
-    <li>Open <strong>Effects &amp; Presets</strong> and search for <strong>EC Twitch</strong>. It sits under <strong>Stylize</strong>.</li>
+    <li>Open File Explorer. Click the address bar, type <code>%APPDATA%</code> and press Enter.</li>
+    <li>Open the <strong>EffectCraft</strong> folder. If there isn't one, start EffectCraft once and close it, or make a folder named <code>EffectCraft</code>.</li>
+    <li>Inside it, make a new folder named <code>Plug-ins</code>.</li>
+    <li>Copy <code>1_Plugin\ec_twitch.wasm</code> into that folder.</li>
+    <li>Restart EffectCraft. It loads every <code>.wasm</code> file in that folder when it starts. Search for <strong>EC Twitch</strong> in Effects &amp; Presets. It sits under <strong>Stylize</strong>.</li>
   </ol>
+  <p>The full Plug-ins folder for each system:</p>
   <div class="paths"><div class="os"><h3>Windows</h3><div class="pathrow"><code>%APPDATA%\EffectCraft\Plug-ins</code><button type="button" class="copy" data-copy="%APPDATA%\EffectCraft\Plug-ins" aria-label="Copy Windows path">Copy</button></div></div><div class="os"><h3>macOS</h3><div class="pathrow"><code>~/Library/Application Support/EffectCraft/Plug-ins</code><button type="button" class="copy" data-copy="~/Library/Application Support/EffectCraft/Plug-ins" aria-label="Copy macOS path">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>~/.config/effectcraft/Plug-ins</code><button type="button" class="copy" data-copy="~/.config/effectcraft/Plug-ins" aria-label="Copy Linux path">Copy</button></div></div></div>
-  <p>On the Windows portable build, the folder is <code>EffectCraftData\Plug-ins</code> next to <code>EffectCraft.exe</code>.</p>
+  <p>On macOS or Linux, run this in Terminal inside the unzipped folder. It makes the folder and copies the file:</p>
+  <div class="paths"><div class="os"><h3>macOS</h3><div class="pathrow"><code>mkdir -p ~/Library/Application\ Support/EffectCraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_twitch.wasm ~/Library/Application\ Support/EffectCraft/Plug-ins/</code><button type="button" class="copy" data-copy="mkdir -p ~/Library/Application\ Support/EffectCraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_twitch.wasm ~/Library/Application\ Support/EffectCraft/Plug-ins/" aria-label="Copy the macOS command">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>mkdir -p ~/.config/effectcraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_twitch.wasm ~/.config/effectcraft/Plug-ins/</code><button type="button" class="copy" data-copy="mkdir -p ~/.config/effectcraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_twitch.wasm ~/.config/effectcraft/Plug-ins/" aria-label="Copy the Linux command">Copy</button></div></div></div>
+  <p>On the Windows portable build, use <code>EffectCraftData\Plug-ins</code> next to <code>EffectCraft.exe</code>. The installer is for the normal installed EffectCraft only.</p>
   <div class="callout"><p>Want to try it before copying anything? Choose <strong>Effect &gt; Load Effect Plug-in…</strong> and pick <code>ec_twitch.wasm</code>. It loads right away.</p></div>
 </section>
 
 <section id="presets-install">
   <h2>Add the presets</h2>
+  <p>Ran <code>INSTALL_WINDOWS.bat</code>? The presets are already in place. Skip to "Show them in EffectCraft" below.</p>
+  <div class="callout warn"><p><strong>The Presets folder isn't there until you make it.</strong> Installing EffectCraft doesn't create it. EffectCraft reads presets from exactly this folder:</p></div>
+  <div class="paths"><div class="os"><h3>Windows</h3><div class="pathrow"><code>%USERPROFILE%\Documents\EffectCraft\Presets</code><button type="button" class="copy" data-copy="%USERPROFILE%\Documents\EffectCraft\Presets" aria-label="Copy Windows path">Copy</button></div></div><div class="os"><h3>macOS</h3><div class="pathrow"><code>~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="~/Documents/EffectCraft/Presets" aria-label="Copy macOS path">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="~/Documents/EffectCraft/Presets" aria-label="Copy Linux path">Copy</button></div></div></div>
+  <p>On Windows that means <code>C:\Users\&lt;your user name&gt;\Documents\EffectCraft\Presets</code>.</p>
+  <h3>Make the Presets folder on Windows</h3>
   <ol class="steps">
-    <li>Copy every file from <code>2_Presets</code> into EffectCraft's <strong>Presets</strong> folder. Put the files directly in the folder, not in a subfolder.</li>
-    <li>In Effects &amp; Presets, open the panel menu and choose <strong>Refresh List</strong>. Check that <strong>Show Animation Presets</strong> is ticked.</li>
+    <li>Open File Explorer. Click the address bar, type <code>%USERPROFILE%</code> and press Enter. You're now in <code>C:\Users\&lt;your user name&gt;</code>.</li>
+    <li>Open <strong>Documents</strong>. If there's no Documents folder there, make one named <code>Documents</code>.</li>
+    <li>Inside Documents, make a new folder named <code>EffectCraft</code>.</li>
+    <li>Inside EffectCraft, make a new folder named <code>Presets</code>.</li>
+  </ol>
+  <div class="callout"><p><strong>OneDrive:</strong> even if Windows keeps your Documents in OneDrive, EffectCraft still looks in <code>C:\Users\&lt;you&gt;\Documents</code>, not in <code>OneDrive\Documents</code>. Step 1 takes you to the right place.</p><p>To check, open the Effects &amp; Presets panel menu, choose <strong>Copy Presets Folder Path</strong>, and paste it into the File Explorer address bar. That's the folder EffectCraft reads.</p></div>
+  <p>On macOS or Linux, this Terminal line makes it:</p>
+  <div class="paths"><div class="os"><h3>macOS / Linux</h3><div class="pathrow"><code>mkdir -p ~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="mkdir -p ~/Documents/EffectCraft/Presets" aria-label="Copy the macOS / Linux command">Copy</button></div></div></div>
+  <h3>Copy the presets in</h3>
+  <ol class="steps">
+    <li>Copy all 27 <code>.ecpreset</code> files from <code>2_Presets</code> into the Presets folder. Copy the files themselves, not the <code>2_Presets</code> folder.</li>
+    <li>Check that it looks like <code>Documents\EffectCraft\Presets\EC Twitch - Beat Bounce.ecpreset</code>, with 27 files in all.</li>
+  </ol>
+  <p>On macOS or Linux, this Terminal line, run inside the unzipped folder, makes the folder and copies the presets:</p>
+  <div class="paths"><div class="os"><h3>macOS / Linux</h3><div class="pathrow"><code>mkdir -p ~/Documents/EffectCraft/Presets &amp;&amp; cp 2_Presets/*.ecpreset ~/Documents/EffectCraft/Presets/</code><button type="button" class="copy" data-copy="mkdir -p ~/Documents/EffectCraft/Presets &amp;&amp; cp 2_Presets/*.ecpreset ~/Documents/EffectCraft/Presets/" aria-label="Copy the macOS / Linux command">Copy</button></div></div></div>
+  <h3>Show them in EffectCraft</h3>
+  <ol class="steps">
+    <li>In Effects &amp; Presets, open the panel menu and choose <strong>Refresh List</strong>.</li>
+    <li>Check that <strong>Show Animation Presets</strong> is ticked in the same menu.</li>
     <li>Look under <strong>* Animation Presets</strong>. Every preset is named <strong>EC Twitch - …</strong>.</li>
   </ol>
-  <div class="paths"><div class="os"><h3>Windows</h3><div class="pathrow"><code>%USERPROFILE%\Documents\EffectCraft\Presets</code><button type="button" class="copy" data-copy="%USERPROFILE%\Documents\EffectCraft\Presets" aria-label="Copy Windows path">Copy</button></div></div><div class="os"><h3>macOS</h3><div class="pathrow"><code>~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="~/Documents/EffectCraft/Presets" aria-label="Copy macOS path">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="~/Documents/EffectCraft/Presets" aria-label="Copy Linux path">Copy</button></div></div></div>
-  <div class="callout"><p>Not sure where your Presets folder is? In Effects &amp; Presets, open the panel menu and choose <strong>Copy Presets Folder Path</strong>. If you set the <code>EC_PRESETS_DIR</code> environment variable, EffectCraft uses that folder instead.</p></div>
+  <div class="callout"><p>If you set the <code>EC_PRESETS_DIR</code> environment variable, EffectCraft uses that folder instead.</p></div>
 </section>
 
 <section id="use">
@@ -241,7 +272,8 @@
   <ol class="steps">
     <li>Set up EC Twitch on a layer the way you like it.</li>
     <li>Select <strong>EC Twitch</strong> in Effect Controls.</li>
-    <li>Choose <strong>Animation &gt; Save Animation Preset…</strong> and save the file in your Presets folder.</li>
+    <li>Choose <strong>Animation &gt; Save Animation Preset…</strong> and save the file in the Presets folder (<a href="#presets-install">make it first</a> if you haven't).</li>
+    <li>Choose <strong>Refresh List</strong> in the Effects &amp; Presets panel menu.</li>
   </ol>
   <p>It then shows up in the panel next to the others. Saving keeps the two expressions, so your preset animates right away.</p>
 </section>
@@ -252,9 +284,11 @@
     <dt>The effect looks frozen on one frame.</dt>
     <dd>The <strong>Time (s)</strong> parameter needs its expression. See "Adding the effect from the Effects menu" above.</dd>
     <dt>My presets aren't listed.</dt>
-    <dd>The files must sit directly inside the Presets folder, with the <code>.ecpreset</code> ending. Choose Refresh List in the panel menu and check that Show Animation Presets is ticked.</dd>
+    <dd>Most often the Presets folder doesn't exist or is in the wrong place. EffectCraft doesn't create it. Make <code>Documents\EffectCraft\Presets</code> as shown in <a href="#presets-install">Add the presets</a>, put the <code>.ecpreset</code> files directly inside it, then choose Refresh List and tick Show Animation Presets. Use <strong>Copy Presets Folder Path</strong> to see the exact folder EffectCraft reads.</dd>
+    <dt>My presets are in OneDrive\Documents.</dt>
+    <dd>EffectCraft doesn't look there. Move them to <code>C:\Users\&lt;you&gt;\Documents\EffectCraft\Presets</code>.</dd>
     <dt>EC Twitch isn't in the Effects list.</dt>
-    <dd>Check the Plug-ins folder path for your system and restart EffectCraft. The effect is under Stylize. The web version of EffectCraft can't run plug-ins.</dd>
+    <dd>The Plug-ins folder must exist and be named exactly <code>Plug-ins</code>. See <a href="#install">Install the plug-in</a>, then restart EffectCraft. The effect is under Stylize. The web version of EffectCraft can't run plug-ins.</dd>
     <dt>I see "an effect with this id is already registered".</dt>
     <dd>The plug-in is already loaded, usually because it is in the Plug-ins folder and you also loaded it from the menu. Nothing to fix.</dd>
     <dt>Time does nothing.</dt>
@@ -291,7 +325,7 @@
 <section id="verify">
   <h2>Check your download</h2>
   <p>The SHA-256 of <code>EC_Twitch_v1.1.zip</code> is:</p>
-  <p class="sha">f1dc19c21f38b103df86cd054498fbe3fff5c08f40b5c317c896c82225859be2</p>
+  <p class="sha">ee5be8f9798edeab834f95a77b760332b685c8fb50389dc55c64a952d9af2aae</p>
   <p>On Windows, run <code>Get-FileHash EC_Twitch_v1.1.zip</code> in PowerShell and compare.</p>
 </section>
 
@@ -300,7 +334,7 @@
 </div>
 <footer>
   <div class="in">
-    <p>Made by DioEnterRight. © 2026 Dexter. All rights reserved. Free to download and use with EffectCraft, including in paid work. You can't redistribute or resell the plug-ins without permission.</p>
+    <p>Store by DioEnterRight. EC Twitch and EC Deep Glow 2 are made by DioEnterRight, © 2026, all rights reserved: free to download and use with EffectCraft, including in paid work, but not to redistribute or resell. Outline Glow and Slizzy Neon Outline are made by Slizzy and upgraded by DioEnterRight.</p>
     <p>Independent work. Not affiliated with or endorsed by Video Copilot, Deep Glow or its makers, or EffectCraft. The names are used only to say what each effect is inspired by.</p>
     <p>Download, like and comment numbers are read live from this project's GitHub page. There is no database.</p>
   </div>

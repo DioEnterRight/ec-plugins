@@ -13,6 +13,9 @@
 }
 [data-accent=twitch]{--acc:var(--mag)}
 [data-accent=dg]{--acc:var(--amb)}
+[data-accent=og]{--acc:var(--cyan)}
+[data-accent=sn]{--acc:#A23BFF}
+@media (prefers-color-scheme:dark){[data-accent=sn]{--acc:#C78BFF}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -29,7 +32,7 @@ code{font-size:.86em;background:var(--panel);padding:.12em .4em;border-radius:4p
 .bar{max-width:76rem;margin:0 auto;padding:1rem 16px;display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .brand{font-weight:800;font-size:1.25rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
 .brand small{font-weight:500;font-size:.9rem;color:var(--muted);letter-spacing:0;margin-left:.5rem}
-.bar nav{display:flex;gap:1.2rem;font-size:.95rem}
+.bar nav{display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;font-size:.95rem}
 .bar nav a{color:var(--muted);text-decoration:none}
 .bar nav a:hover{color:var(--ink)}
 .bar nav a[aria-current=page]{color:var(--ink);font-weight:600}
@@ -64,6 +67,11 @@ code{font-size:.86em;background:var(--panel);padding:.12em .4em;border-radius:4p
 .stage.glow::before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(circle at var(--px) var(--py),rgba(255,170,60,calc(.30 * var(--g))),rgba(255,120,30,calc(.10 * var(--g))) 38%,transparent 66%)}
 .stage.glow .word{color:#FFF6E0;text-shadow:0 0 calc(var(--g) * 6px) #fff,0 0 calc(var(--g) * 22px) #FFC060,0 0 calc(var(--g) * 60px) #FF8A1E,0 0 calc(var(--g) * 130px) #FF6A00}
 
+.stage svg.neon{position:relative;z-index:1;width:86%;height:auto;overflow:visible;--c:#08B8FF;--c2:#5A0DFF;--g:.85;--h:0deg;
+  filter:drop-shadow(0 0 calc(var(--g) * 3px) var(--c)) drop-shadow(0 0 calc(var(--g) * 12px) var(--c)) drop-shadow(0 0 calc(var(--g) * 30px) var(--c2)) hue-rotate(var(--h))}
+.stage svg.neon text{font-family:var(--sans);font-weight:800;font-size:168px;letter-spacing:-5px;fill:none;stroke:var(--c);stroke-width:4;stroke-linejoin:round}
+.stage.sn svg.neon{--c:#B04CFF;--c2:#FF0A7A}
+.stage.sn svg.neon text{stroke:url(#sn-grad);stroke-width:4.5}
 /* store home */
 .intro{max-width:76rem;margin:0 auto;padding:clamp(1.5rem,4vw,3.5rem) 16px 1.5rem}
 .intro h1{margin:0;font-weight:800;font-size:clamp(2.2rem,1.2rem + 4.5vw,4.6rem);line-height:1;letter-spacing:-.035em;max-width:14ch}

@@ -16,7 +16,7 @@
 <a class="skip" href="#main">Skip to the content</a>
 <header class="bar">
   <a class="brand" href="../">EC Plug-ins<small>by DioEnterRight</small></a>
-  <nav aria-label="Plug-ins"><a href="../twitch/">EC Twitch</a><a href="../deep-glow-2/" aria-current="page">EC Deep Glow 2</a></nav>
+  <nav aria-label="Plug-ins"><a href="../twitch/">Twitch</a><a href="../deep-glow-2/" aria-current="page">Deep Glow 2</a><a href="../outline-glow/">Outline Glow</a><a href="../slizzy-neon/">Slizzy Neon</a></nav>
 </header>
 <div style="display:contents">
 <header class="head">
@@ -25,7 +25,7 @@
     <h1>EC Deep Glow 2</h1>
     <p class="pitch">Makes the bright parts of your picture glow like real light: a hot core and a long soft halo. It works in HDR, so values brighter than white keep glowing instead of clipping.</p>
     <div class="buy">
-      <a class="btn" data-dl="deep-glow-2" href="../downloads/EC_Deep_Glow_2_v4.1.1.zip" download>Download zip (76 KB)</a>
+      <a class="btn" data-dl="deep-glow-2" href="../downloads/EC_Deep_Glow_2_v4.1.1.zip" download>Download zip (77 KB)</a>
       <span class="meta">Version 4.1.1 · Stylize · EffectCraft desktop and CLI</span>
     </div>
     <ul class="stats" aria-label="EC Deep Glow 2 numbers from GitHub"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg><b data-stat="downloads" data-product="deep-glow-2">—</b> downloads</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><b data-stat="likes" data-product="deep-glow-2">—</b> likes</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><b data-stat="comments" data-product="deep-glow-2">—</b> comments</li></ul>
@@ -46,15 +46,24 @@
 
 <section id="install">
   <h2>Install the plug-in</h2>
-  <p>The download is one zip. Unzip it and you get a <code>1_Plugin</code> folder and an <code>INSTALL.txt</code> with these same steps. There is only one file to install.</p>
+  <p>The download is one zip. Inside are <code>INSTALL_WINDOWS.bat</code>, a <code>1_Plugin</code> folder and an <code>INSTALL.txt</code> with these same steps. There is only one file to install. Unzip the whole zip first. Don't run anything from inside the zip.</p>
+  <div class="callout"><p>Have an older <code>deep_glow_open_*.wasm</code> in your Plug-ins folder? Delete it first, or you will see two glow effects.</p></div>
+  <h3>Fastest on Windows: double-click the installer</h3>
+  <p>Inside the unzipped folder, double-click <code>INSTALL_WINDOWS.bat</code>. It makes the Plug-ins folder if it is missing and copies the plug-in. Then restart EffectCraft. If Windows asks whether to run the file, click <strong>Run</strong>.</p>
+  <h3>Or install by hand</h3>
+  <div class="callout warn"><p><strong>EffectCraft doesn't make the Plug-ins folder for you.</strong> If it isn't there, make it yourself. It must be named exactly <code>Plug-ins</code>, with a capital P and a dash.</p></div>
   <ol class="steps">
-    <li>If you have an older <code>deep_glow_open_*.wasm</code> in your Plug-ins folder, delete it. Otherwise you will see two glow effects.</li>
-    <li>Copy <code>1_Plugin/ec_deep_glow_2.wasm</code> into EffectCraft's <strong>Plug-ins</strong> folder for your system. Create the folder if it isn't there yet.</li>
-    <li>Restart EffectCraft. It loads every <code>.wasm</code> file in that folder when it starts.</li>
-    <li>Open <strong>Effects &amp; Presets</strong> and search for <strong>EC Deep Glow 2</strong>. It sits under <strong>Stylize</strong>.</li>
+    <li>Open File Explorer. Click the address bar, type <code>%APPDATA%</code> and press Enter.</li>
+    <li>Open the <strong>EffectCraft</strong> folder. If there isn't one, start EffectCraft once and close it, or make a folder named <code>EffectCraft</code>.</li>
+    <li>Inside it, make a new folder named <code>Plug-ins</code>.</li>
+    <li>Copy <code>1_Plugin\ec_deep_glow_2.wasm</code> into that folder.</li>
+    <li>Restart EffectCraft. It loads every <code>.wasm</code> file in that folder when it starts. Search for <strong>EC Deep Glow 2</strong> in Effects &amp; Presets. It sits under <strong>Stylize</strong>.</li>
   </ol>
+  <p>The full Plug-ins folder for each system:</p>
   <div class="paths"><div class="os"><h3>Windows</h3><div class="pathrow"><code>%APPDATA%\EffectCraft\Plug-ins</code><button type="button" class="copy" data-copy="%APPDATA%\EffectCraft\Plug-ins" aria-label="Copy Windows path">Copy</button></div></div><div class="os"><h3>macOS</h3><div class="pathrow"><code>~/Library/Application Support/EffectCraft/Plug-ins</code><button type="button" class="copy" data-copy="~/Library/Application Support/EffectCraft/Plug-ins" aria-label="Copy macOS path">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>~/.config/effectcraft/Plug-ins</code><button type="button" class="copy" data-copy="~/.config/effectcraft/Plug-ins" aria-label="Copy Linux path">Copy</button></div></div></div>
-  <p>On the Windows portable build, the folder is <code>EffectCraftData\Plug-ins</code> next to <code>EffectCraft.exe</code>.</p>
+  <p>On macOS or Linux, run this in Terminal inside the unzipped folder. It makes the folder and copies the file:</p>
+  <div class="paths"><div class="os"><h3>macOS</h3><div class="pathrow"><code>mkdir -p ~/Library/Application\ Support/EffectCraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_deep_glow_2.wasm ~/Library/Application\ Support/EffectCraft/Plug-ins/</code><button type="button" class="copy" data-copy="mkdir -p ~/Library/Application\ Support/EffectCraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_deep_glow_2.wasm ~/Library/Application\ Support/EffectCraft/Plug-ins/" aria-label="Copy the macOS command">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>mkdir -p ~/.config/effectcraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_deep_glow_2.wasm ~/.config/effectcraft/Plug-ins/</code><button type="button" class="copy" data-copy="mkdir -p ~/.config/effectcraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_deep_glow_2.wasm ~/.config/effectcraft/Plug-ins/" aria-label="Copy the Linux command">Copy</button></div></div></div>
+  <p>On the Windows portable build, use <code>EffectCraftData\Plug-ins</code> next to <code>EffectCraft.exe</code>. The installer is for the normal installed EffectCraft only.</p>
   <div class="callout"><p>Want to try it before copying anything? Choose <strong>Effect &gt; Load Effect Plug-in…</strong> and pick <code>ec_deep_glow_2.wasm</code>. It loads right away.</p></div>
 </section>
 
@@ -181,13 +190,26 @@
 
 <section id="own">
   <h2>Save your own preset</h2>
+  <div class="callout warn"><p><strong>The Presets folder isn't there until you make it.</strong> Installing EffectCraft doesn't create it. EffectCraft reads presets from exactly this folder:</p></div>
+  <div class="paths"><div class="os"><h3>Windows</h3><div class="pathrow"><code>%USERPROFILE%\Documents\EffectCraft\Presets</code><button type="button" class="copy" data-copy="%USERPROFILE%\Documents\EffectCraft\Presets" aria-label="Copy Windows path">Copy</button></div></div><div class="os"><h3>macOS</h3><div class="pathrow"><code>~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="~/Documents/EffectCraft/Presets" aria-label="Copy macOS path">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="~/Documents/EffectCraft/Presets" aria-label="Copy Linux path">Copy</button></div></div></div>
+  <p>On Windows that means <code>C:\Users\&lt;your user name&gt;\Documents\EffectCraft\Presets</code>.</p>
+  <h3>Make the Presets folder on Windows</h3>
+  <ol class="steps">
+    <li>Open File Explorer. Click the address bar, type <code>%USERPROFILE%</code> and press Enter. You're now in <code>C:\Users\&lt;your user name&gt;</code>.</li>
+    <li>Open <strong>Documents</strong>. If there's no Documents folder there, make one named <code>Documents</code>.</li>
+    <li>Inside Documents, make a new folder named <code>EffectCraft</code>.</li>
+    <li>Inside EffectCraft, make a new folder named <code>Presets</code>.</li>
+  </ol>
+  <div class="callout"><p><strong>OneDrive:</strong> even if Windows keeps your Documents in OneDrive, EffectCraft still looks in <code>C:\Users\&lt;you&gt;\Documents</code>, not in <code>OneDrive\Documents</code>. Step 1 takes you to the right place.</p><p>To check, open the Effects &amp; Presets panel menu, choose <strong>Copy Presets Folder Path</strong>, and paste it into the File Explorer address bar. That's the folder EffectCraft reads.</p></div>
+  <p>On macOS or Linux, this Terminal line makes it:</p>
+  <div class="paths"><div class="os"><h3>macOS / Linux</h3><div class="pathrow"><code>mkdir -p ~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="mkdir -p ~/Documents/EffectCraft/Presets" aria-label="Copy the macOS / Linux command">Copy</button></div></div></div>
+  <h3>Save it</h3>
   <ol class="steps">
     <li>Set up EC Deep Glow 2 on a layer the way you like it.</li>
     <li>Select <strong>EC Deep Glow 2</strong> in Effect Controls.</li>
-    <li>Choose <strong>Animation &gt; Save Animation Preset…</strong> and save the file in your Presets folder.</li>
+    <li>Choose <strong>Animation &gt; Save Animation Preset…</strong> and save the file in the Presets folder.</li>
+    <li>In the Effects &amp; Presets panel menu, choose <strong>Refresh List</strong>. Your preset shows up under <strong>* Animation Presets</strong>.</li>
   </ol>
-  <div class="paths"><div class="os"><h3>Windows</h3><div class="pathrow"><code>%USERPROFILE%\Documents\EffectCraft\Presets</code><button type="button" class="copy" data-copy="%USERPROFILE%\Documents\EffectCraft\Presets" aria-label="Copy Windows path">Copy</button></div></div><div class="os"><h3>macOS</h3><div class="pathrow"><code>~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="~/Documents/EffectCraft/Presets" aria-label="Copy macOS path">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="~/Documents/EffectCraft/Presets" aria-label="Copy Linux path">Copy</button></div></div></div>
-  <p>Choose <strong>Refresh List</strong> in the Effects &amp; Presets panel menu and your preset shows up in the list.</p>
 </section>
 
 <section id="trouble">
@@ -198,7 +220,7 @@
     <dt>I see two glow effects in the list.</dt>
     <dd>Delete the old <code>deep_glow_open_*.wasm</code> from the Plug-ins folder and restart.</dd>
     <dt>EC Deep Glow 2 isn't in the Effects list.</dt>
-    <dd>Check the Plug-ins folder path for your system and restart EffectCraft. The effect is under Stylize. The web version of EffectCraft can't run plug-ins.</dd>
+    <dd>The Plug-ins folder must exist and be named exactly <code>Plug-ins</code>. See <a href="#install">Install the plug-in</a>, then restart EffectCraft. The effect is under Stylize. The web version of EffectCraft can't run plug-ins.</dd>
     <dt>I see "an effect with this id is already registered".</dt>
     <dd>The plug-in is already loaded, usually because it is in the Plug-ins folder and you also loaded it from the menu. Nothing to fix.</dd>
     <dt>The glow looks too dim or too bright.</dt>
@@ -233,7 +255,7 @@
 <section id="verify">
   <h2>Check your download</h2>
   <p>The SHA-256 of <code>EC_Deep_Glow_2_v4.1.1.zip</code> is:</p>
-  <p class="sha">1811d3842ea04206578982414c2799cfc9119173a7c4f0844ac80f52a29553b6</p>
+  <p class="sha">94e6d7dfcfac97ae6ab425c93c1208df064cda5f59c7370b523343829aa79b77</p>
   <p>On Windows, run <code>Get-FileHash EC_Deep_Glow_2_v4.1.1.zip</code> in PowerShell and compare.</p>
 </section>
 
@@ -242,7 +264,7 @@
 </div>
 <footer>
   <div class="in">
-    <p>Made by DioEnterRight. © 2026 Dexter. All rights reserved. Free to download and use with EffectCraft, including in paid work. You can't redistribute or resell the plug-ins without permission.</p>
+    <p>Store by DioEnterRight. EC Twitch and EC Deep Glow 2 are made by DioEnterRight, © 2026, all rights reserved: free to download and use with EffectCraft, including in paid work, but not to redistribute or resell. Outline Glow and Slizzy Neon Outline are made by Slizzy and upgraded by DioEnterRight.</p>
     <p>Independent work. Not affiliated with or endorsed by Video Copilot, Deep Glow or its makers, or EffectCraft. The names are used only to say what each effect is inspired by.</p>
     <p>Download, like and comment numbers are read live from this project's GitHub page. There is no database.</p>
   </div>
