@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EC Twitch: random twitch effects for EffectCraft</title>
+<meta name="description" content="EC Twitch adds random hits of blur, color, light, scale, slide and time to EffectCraft, with 25 presets and step-by-step install instructions.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B1D3F'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23FFB347' opacity='.35'/%3E%3Ccircle cx='16' cy='16' r='4.5' fill='%23FFF6E0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Spline+Sans+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/store.css">
+</head>
+<body data-accent="twitch">
+<a class="skip" href="#main">Skip to the content</a>
+<header class="bar">
+  <a class="brand" href="../">EC Plug-ins<small>by DioEnterRight</small></a>
+  <nav aria-label="Plug-ins"><a href="../twitch/" aria-current="page">EC Twitch</a><a href="../deep-glow-2/">EC Deep Glow 2</a><a href="../outline-glow/">EC Outline Glow</a><a href="../neon-outline/">EC Neon Outline</a></nav>
+</header>
+<div style="display:contents">
+<header class="head">
+  <div>
+    <a class="back" href="../">← All plug-ins</a>
+    <h1>EC Twitch</h1>
+    <p class="pitch">Random hits of blur, color, light, scale, slide and time. Set one Amount and one Speed, and the six operators fire together.</p>
+    <div class="buy">
+      <a class="btn" data-dl="twitch" href="../downloads/EC_Twitch_v1.1.1.zip" download>Download zip (115 KB)</a>
+      <span class="meta">Version 1.1.1 · 25 presets · EffectCraft desktop and CLI</span>
+    </div>
+    <ul class="stats" aria-label="EC Twitch numbers from GitHub"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg><b data-stat="downloads" data-product="twitch">—</b> downloads</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><b data-stat="likes" data-product="twitch">—</b> likes</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><b data-stat="comments" data-product="twitch">—</b> comments</li></ul>
+    <div class="likebar">
+      <a class="btn ghost sm" data-like="twitch" href="https://github.com/DioEnterRight/ec-plugins/issues/1" target="_blank" rel="noopener"><svg width="16" height="16" style="vertical-align:-3px;margin-right:.4rem;fill:none;stroke:currentColor;stroke-width:1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Like on GitHub</a>
+      <a class="btn ghost sm" href="#comments">Read comments</a>
+      <small>Likes and comments live on GitHub. Click the thumbs-up or heart on the first post. A free GitHub account is needed.</small>
+    </div>
+  </div>
+  <a class="stage" data-live="twitch" href="#install" aria-label="Live preview of EC Twitch">
+    <p class="word" aria-hidden="true"><span>Twitch</span></p>
+    <ul class="pills" aria-hidden="true"><li>Blur</li><li>Color</li><li>Light</li><li>Scale</li><li>Slide</li><li>Time</li></ul>
+    <p class="cap" aria-hidden="true">frame <b data-frame>00000</b></p>
+  </a>
+</header>
+<div class="shell">
+<nav class="rail" aria-label="On this page"><a href="#install">Install the plug-in</a><a href="#presets-install">Add the presets</a><a href="#use">Apply a preset</a><a href="#time">Use the Time operator</a><a href="#preset-list">The 25 presets</a><a href="#how">How it works</a><a href="#controls">Controls</a><a href="#speed">Speed and quality</a><a href="#own">Save your own preset</a><a href="#trouble">If something goes wrong</a><a href="#limits">What this is and isn&#x27;t</a><a href="#comments">Comments</a></nav>
+<main id="main">
+
+<section id="install">
+  <h2>Install the plug-in</h2>
+  <p>The download is one zip. Inside are <code>INSTALL_WINDOWS.bat</code>, a <code>1_Plugin</code> folder, a <code>2_Presets</code> folder and an <code>INSTALL.txt</code> with these same steps. Unzip the whole zip first. Don't run anything from inside the zip.</p>
+  
+  <h3>Fastest on Windows: double-click the installer</h3>
+  <p>Inside the unzipped folder, double-click <code>INSTALL_WINDOWS.bat</code>. It makes the Plug-ins and Presets folders if they are missing, and copies the plug-in and all 27 presets. Then restart EffectCraft. If Windows asks whether to run the file, click <strong>Run</strong>.</p>
+  <h3>Or install by hand</h3>
+  <div class="callout warn"><p><strong>EffectCraft doesn't make the Plug-ins folder for you.</strong> If it isn't there, make it yourself. It must be named exactly <code>Plug-ins</code>, with a capital P and a dash.</p></div>
+  <ol class="steps">
+    <li>Open File Explorer. Click the address bar, type <code>%APPDATA%</code> and press Enter.</li>
+    <li>Open the <strong>EffectCraft</strong> folder. If there isn't one, start EffectCraft once and close it, or make a folder named <code>EffectCraft</code>.</li>
+    <li>Inside it, make a new folder named <code>Plug-ins</code>.</li>
+    <li>Copy <code>1_Plugin\ec_twitch.wasm</code> into that folder.</li>
+    <li>Restart EffectCraft. It loads every <code>.wasm</code> file in that folder when it starts. Search for <strong>EC Twitch</strong> in Effects &amp; Presets. It sits under <strong>Stylize</strong>.</li>
+  </ol>
+  <p>The full Plug-ins folder for each system:</p>
+  <div class="paths"><div class="os"><h3>Windows</h3><div class="pathrow"><code>%APPDATA%\EffectCraft\Plug-ins</code><button type="button" class="copy" data-copy="%APPDATA%\EffectCraft\Plug-ins" aria-label="Copy Windows path">Copy</button></div></div><div class="os"><h3>macOS</h3><div class="pathrow"><code>~/Library/Application Support/EffectCraft/Plug-ins</code><button type="button" class="copy" data-copy="~/Library/Application Support/EffectCraft/Plug-ins" aria-label="Copy macOS path">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>~/.config/effectcraft/Plug-ins</code><button type="button" class="copy" data-copy="~/.config/effectcraft/Plug-ins" aria-label="Copy Linux path">Copy</button></div></div></div>
+  <p>On macOS or Linux, run this in Terminal inside the unzipped folder. It makes the folder and copies the file:</p>
+  <div class="paths"><div class="os"><h3>macOS</h3><div class="pathrow"><code>mkdir -p ~/Library/Application\ Support/EffectCraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_twitch.wasm ~/Library/Application\ Support/EffectCraft/Plug-ins/</code><button type="button" class="copy" data-copy="mkdir -p ~/Library/Application\ Support/EffectCraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_twitch.wasm ~/Library/Application\ Support/EffectCraft/Plug-ins/" aria-label="Copy the macOS command">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>mkdir -p ~/.config/effectcraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_twitch.wasm ~/.config/effectcraft/Plug-ins/</code><button type="button" class="copy" data-copy="mkdir -p ~/.config/effectcraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_twitch.wasm ~/.config/effectcraft/Plug-ins/" aria-label="Copy the Linux command">Copy</button></div></div></div>
+  <p>On the Windows portable build, use <code>EffectCraftData\Plug-ins</code> next to <code>EffectCraft.exe</code>. The installer is for the normal installed EffectCraft only.</p>
+  <div class="callout"><p>Want to try it before copying anything? Choose <strong>Effect &gt; Load Effect Plug-in…</strong> and pick <code>ec_twitch.wasm</code>. It loads right away.</p></div>
+</section>
+
+<section id="presets-install">
+  <h2>Add the presets</h2>
+  <p>Ran <code>INSTALL_WINDOWS.bat</code>? The presets are already in place. Skip to "Show them in EffectCraft" below.</p>
+  <div class="callout warn"><p><strong>The Presets folder isn't there until you make it.</strong> Installing EffectCraft doesn't create it. EffectCraft reads presets from exactly this folder:</p></div>
+  <div class="paths"><div class="os"><h3>Windows</h3><div class="pathrow"><code>%USERPROFILE%\Documents\EffectCraft\Presets</code><button type="button" class="copy" data-copy="%USERPROFILE%\Documents\EffectCraft\Presets" aria-label="Copy Windows path">Copy</button></div></div><div class="os"><h3>macOS</h3><div class="pathrow"><code>~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="~/Documents/EffectCraft/Presets" aria-label="Copy macOS path">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="~/Documents/EffectCraft/Presets" aria-label="Copy Linux path">Copy</button></div></div></div>
+  <p>On Windows that means <code>C:\Users\&lt;your user name&gt;\Documents\EffectCraft\Presets</code>.</p>
+  <h3>Make the Presets folder on Windows</h3>
+  <ol class="steps">
+    <li>Open File Explorer. Click the address bar, type <code>%USERPROFILE%</code> and press Enter. You're now in <code>C:\Users\&lt;your user name&gt;</code>.</li>
+    <li>Open <strong>Documents</strong>. If there's no Documents folder there, make one named <code>Documents</code>.</li>
+    <li>Inside Documents, make a new folder named <code>EffectCraft</code>.</li>
+    <li>Inside EffectCraft, make a new folder named <code>Presets</code>.</li>
+  </ol>
+  <div class="callout"><p><strong>OneDrive:</strong> even if Windows keeps your Documents in OneDrive, EffectCraft still looks in <code>C:\Users\&lt;you&gt;\Documents</code>, not in <code>OneDrive\Documents</code>. Step 1 takes you to the right place.</p><p>To check, open the Effects &amp; Presets panel menu, choose <strong>Copy Presets Folder Path</strong>, and paste it into the File Explorer address bar. That's the folder EffectCraft reads.</p></div>
+  <p>On macOS or Linux, this Terminal line makes it:</p>
+  <div class="paths"><div class="os"><h3>macOS / Linux</h3><div class="pathrow"><code>mkdir -p ~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="mkdir -p ~/Documents/EffectCraft/Presets" aria-label="Copy the macOS / Linux command">Copy</button></div></div></div>
+  <h3>Copy the presets in</h3>
+  <ol class="steps">
+    <li>Copy all 27 <code>.ecpreset</code> files from <code>2_Presets</code> into the Presets folder. Copy the files themselves, not the <code>2_Presets</code> folder.</li>
+    <li>Check that it looks like <code>Documents\EffectCraft\Presets\EC Twitch - Beat Bounce.ecpreset</code>, with 27 files in all.</li>
+  </ol>
+  <p>On macOS or Linux, this Terminal line, run inside the unzipped folder, makes the folder and copies the presets:</p>
+  <div class="paths"><div class="os"><h3>macOS / Linux</h3><div class="pathrow"><code>mkdir -p ~/Documents/EffectCraft/Presets &amp;&amp; cp 2_Presets/*.ecpreset ~/Documents/EffectCraft/Presets/</code><button type="button" class="copy" data-copy="mkdir -p ~/Documents/EffectCraft/Presets &amp;&amp; cp 2_Presets/*.ecpreset ~/Documents/EffectCraft/Presets/" aria-label="Copy the macOS / Linux command">Copy</button></div></div></div>
+  <h3>Show them in EffectCraft</h3>
+  <ol class="steps">
+    <li>In Effects &amp; Presets, open the panel menu and choose <strong>Refresh List</strong>.</li>
+    <li>Check that <strong>Show Animation Presets</strong> is ticked in the same menu.</li>
+    <li>Look under <strong>* Animation Presets</strong>. Every preset is named <strong>EC Twitch - …</strong>.</li>
+  </ol>
+  <div class="callout"><p>If you set the <code>EC_PRESETS_DIR</code> environment variable, EffectCraft uses that folder instead.</p></div>
+</section>
+
+<section id="use">
+  <h2>Apply a preset</h2>
+  <ol class="steps">
+    <li>Select a layer.</li>
+    <li>Move the playhead to where the twitch should start.</li>
+    <li>Double-click a preset in Effects &amp; Presets. You can also drag it onto a layer, or choose <strong>Animation &gt; Apply Animation Preset…</strong> and pick the file.</li>
+  </ol>
+  <p>EC Twitch now shows in Effect Controls. Change <strong>Amount</strong> and <strong>Speed</strong> to taste, and change <strong>Seed</strong> to get a different random pattern. The same Seed always gives the same result, on any machine.</p>
+  <h3>Transition presets</h3>
+  <p>Presets that start with <strong>Transition</strong> carry keyframes on Amount that fade the twitch in and out over 0.4 seconds from the playhead. The peak lands 0.2 seconds in, so start about 6 frames before your cut.</p>
+  <div class="callout"><p>Each preset adds a new EC Twitch effect. To swap presets, delete the old EC Twitch first. One undo removes a whole preset.</p></div>
+  <h3>Adding the effect from the Effects menu</h3>
+  <p>If you add EC Twitch without a preset, two parameters need an expression. Presets add them for you.</p>
+  <ul>
+    <li><strong>Time (s)</strong>: <code>time - thisLayer.startTime</code></li>
+    <li><strong>Frame Rate</strong>: <code>1 / thisComp.frameDuration</code></li>
+  </ul>
+  <p>Select the parameter, choose <strong>Animation &gt; Add Expression</strong> and paste the line. Without the first one, EffectCraft renders a single frame and the effect looks frozen.</p>
+</section>
+
+<section id="time">
+  <h2>Use the Time operator</h2>
+  <p>Time shifts the footage forward or back by whole frames. EffectCraft's plug-in format can't read other frames, so Time runs as an expression on Time Remap. It uses the same random schedule as the effect, so it stays in step with the other operators.</p>
+  <ol class="steps">
+    <li>Use a footage layer or a pre-comp. A solid can't be time-remapped. <strong>Layer &gt; Pre-compose</strong> turns any layer into a pre-comp.</li>
+    <li>Choose <strong>Layer &gt; Time &gt; Enable Time Remapping</strong>.</li>
+    <li>Apply <strong>EC Twitch - Time Stutter</strong>, <strong>Rewind Glitch</strong> or <strong>Total Chaos</strong>.</li>
+  </ol>
+  <div class="callout warn"><p>Applying one of these replaces the layer's Time Remap keyframes. If the layer isn't time-remapped yet, the effect still applies but the Time part is skipped.</p></div>
+  <p>Already have EC Twitch on the layer? Tick <strong>Time</strong> in its Enable controls, then apply <strong>EC Twitch - Time Remap</strong>. That preset adds only the Time Remap expression. Don't rename the EC Twitch effect, because the expression finds it by name.</p>
+</section>
+
+<section id="preset-list">
+  <h2>The 25 presets</h2>
+  <p>The list below has 25 presets plus <strong>Setup</strong> and the <strong>Time Remap</strong> helper, 27 files in all. In EffectCraft, every preset name begins with "EC Twitch - ".</p>
+  <p>Video Copilot hasn't published the names or values of Twitch's own presets, apart from a few numbers from two of them. <strong>Transition Side Swiped</strong> and <strong>Crazy Man</strong> are rebuilt from those numbers. The other 23 are original.</p>
+  <div class="scroll"><table class="presets">
+    <thead><tr><th scope="col">Preset</th><th scope="col">What it does</th><th scope="col">Operators</th></tr></thead>
+    <tbody><tr><th colspan="3" scope="colgroup" class="grp">Start here</th></tr>
+<tr><th scope="row"><span class="pn">Setup (Defaults)</span></th><td>Adds EC Twitch with the clock and frame rate already wired, and every operator off. Start here to build your own.</td><td>None until you tick one</td></tr>
+</tbody>
+<tbody><tr><th colspan="3" scope="colgroup" class="grp">Transitions</th></tr>
+<tr><th scope="row"><span class="pn">Transition Side Swiped</span></th><td>A fast sideways whip with blur and a light flash. Rebuilt from the few public values of Twitch&#x27;s preset of the same name.<br><span class=note>Fades in and out over 0.4 seconds.</span></td><td>Blur, Light, Slide</td></tr>
+<tr><th scope="row"><span class="pn">Transition Glitch Hit</span></th><td>A short slide with a heavy red, green and blue split and random color flashes.<br><span class=note>Fades in and out over 0.4 seconds.</span></td><td>Blur, Color, Slide</td></tr>
+<tr><th scope="row"><span class="pn">Transition Flash Cut</span></th><td>A white-out flash with additive blur that eases away.<br><span class=note>Fades in and out over 0.4 seconds.</span></td><td>Blur, Light</td></tr>
+<tr><th scope="row"><span class="pn">Transition Zoom Punch</span></th><td>A zoom punch with blur and a brightness kick.<br><span class=note>Fades in and out over 0.4 seconds.</span></td><td>Blur, Light, Scale</td></tr>
+<tr><th scope="row"><span class="pn">Transition Whip Left</span></th><td>A hard whip to the left with horizontal blur.<br><span class=note>Fades in and out over 0.4 seconds.</span></td><td>Blur, Slide</td></tr>
+<tr><th scope="row"><span class="pn">Transition Whip Up</span></th><td>A hard whip upward with vertical blur.<br><span class=note>Fades in and out over 0.4 seconds.</span></td><td>Blur, Slide</td></tr>
+</tbody>
+<tbody><tr><th colspan="3" scope="colgroup" class="grp">Light</th></tr>
+<tr><th scope="row"><span class="pn">Strobe Light</span></th><td>Hard flashes that go brighter or darker at random.</td><td>Light</td></tr>
+<tr><th scope="row"><span class="pn">Fluorescent Flicker</span></th><td>A cheap tube light: the picture dips darker at random.</td><td>Light</td></tr>
+<tr><th scope="row"><span class="pn">Neon Flicker</span></th><td>Brightness flicker with a cyan tint.</td><td>Color, Light</td></tr>
+<tr><th scope="row"><span class="pn">Paparazzi Flash</span></th><td>Rare, very bright flashes with a small glow.</td><td>Blur, Light</td></tr>
+</tbody>
+<tbody><tr><th colspan="3" scope="colgroup" class="grp">Motion</th></tr>
+<tr><th scope="row"><span class="pn">Camera Shake</span></th><td>Small random shake with a hint of zoom.</td><td>Scale, Slide</td></tr>
+<tr><th scope="row"><span class="pn">Earthquake</span></th><td>A heavy shake with a random zoom point and a little blur.</td><td>Blur, Scale, Slide</td></tr>
+<tr><th scope="row"><span class="pn">Heartbeat Pulse</span></th><td>A slow zoom pulse with a soft lift in brightness.</td><td>Light, Scale</td></tr>
+<tr><th scope="row"><span class="pn">Beat Bounce</span></th><td>A sharp zoom bounce that settles quickly. Good for hits on the beat.</td><td>Light, Scale</td></tr>
+</tbody>
+<tbody><tr><th colspan="3" scope="colgroup" class="grp">Glitch and color</th></tr>
+<tr><th scope="row"><span class="pn">RGB Jitter</span></th><td>Red, green and blue shake apart from each other.</td><td>Slide</td></tr>
+<tr><th scope="row"><span class="pn">VHS Damage</span></th><td>Sideways tears with color split, a magenta tint and blur.</td><td>Blur, Color, Slide</td></tr>
+<tr><th scope="row"><span class="pn">Color Pop</span></th><td>Random color flashes.</td><td>Color</td></tr>
+<tr><th scope="row"><span class="pn">Signal Fragments</span></th><td>Shows only the twitch frames and leaves the rest transparent. Layer it over footage.</td><td>Light, Slide</td></tr>
+</tbody>
+<tbody><tr><th colspan="3" scope="colgroup" class="grp">Blur</th></tr>
+<tr><th scope="row"><span class="pn">Blur Pulse</span></th><td>The picture breathes in and out of blur.</td><td>Blur</td></tr>
+<tr><th scope="row"><span class="pn">Dream Glow</span></th><td>A warm, slow glow that blurs only the highlights.</td><td>Blur, Light</td></tr>
+<tr><th scope="row"><span class="pn">Bokeh Hits</span></th><td>Round lens blur in short bursts.</td><td>Blur</td></tr>
+</tbody>
+<tbody><tr><th colspan="3" scope="colgroup" class="grp">Time</th></tr>
+<tr><th scope="row"><span class="pn">Time Stutter</span></th><td>The footage jumps back and forth in time, with a light shake.<br><span class=note>Needs Time Remapping.</span></td><td>Slide, Time</td></tr>
+<tr><th scope="row"><span class="pn">Rewind Glitch</span></th><td>The footage jumps backward only, with split colors and a sideways tear.<br><span class=note>Needs Time Remapping.</span></td><td>Color, Slide, Time</td></tr>
+</tbody>
+<tbody><tr><th colspan="3" scope="colgroup" class="grp">Everything</th></tr>
+<tr><th scope="row"><span class="pn">Crazy Man</span></th><td>All five picture operators at once with an orange tint. Rebuilt from the few public values of Twitch&#x27;s preset of the same name.</td><td>Blur, Color, Light, Scale, Slide</td></tr>
+<tr><th scope="row"><span class="pn">Total Chaos</span></th><td>Everything at once, Time included.<br><span class=note>Needs Time Remapping.</span></td><td>Blur, Color, Light, Scale, Slide, Time</td></tr>
+</tbody>
+  </table></div>
+  <p><strong>EC Twitch - Time Remap</strong> isn't a look. It's the helper from the Time operator section.</p>
+</section>
+
+<section id="how">
+  <h2>How it works</h2>
+  <p>Each operator fires random twitches. One twitch builds up over <strong>Ease In</strong> frames, holds for <strong>Hold Frames</strong>, then fades over <strong>Ease Out</strong> frames. Its size is random between <strong>Randomize Minimum</strong> and full strength, scaled by <strong>Amount</strong>.</p>
+  <p>How often an operator fires is <strong>Speed</strong> times that operator's <strong>Twitches [sec]</strong>. Speed 2 with Twitches 1 means two twitches every second.</p>
+  <p>Operators with <strong>Unique Seed</strong> at 0 share one timing pattern, so operators with the same rate fire on the same frame. Give an operator its own Unique Seed to split its timing from the rest.</p>
+  <p>Nothing carries over between frames. Each frame is worked out from the Seed and the time alone, so you can scrub, jump around or render in any order and get the same picture.</p>
+</section>
+
+<section id="controls">
+  <h2>Controls</h2>
+  <p>Names and options follow Twitch. EffectCraft plug-ins can't have fold-out groups yet, so everything is one flat list in Effect Controls.</p>
+  <details open><summary>Master controls</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Time (s)</th><td>-100000 to 100000</td><td>0</td><td>Drives the animation. Presets link it to the layer&#x27;s time. Keep its expression.</td></tr>
+<tr><th scope="row">Amount</th><td>0 to 1000 (slider stops at 100)</td><td>100</td><td>Master strength of every operator. 100 is full strength.</td></tr>
+<tr><th scope="row">Speed</th><td>0 to 1000 (slider stops at 100)</td><td>10</td><td>How often twitches fire. It multiplies each operator&#x27;s Twitches [sec].</td></tr>
+<tr><th scope="row">Blur</th><td>On or off</td><td>Off</td><td>Turns the Blur operator on.</td></tr>
+<tr><th scope="row">Color</th><td>On or off</td><td>Off</td><td>Turns the Color operator on.</td></tr>
+<tr><th scope="row">Light</th><td>On or off</td><td>Off</td><td>Turns the Light operator on.</td></tr>
+<tr><th scope="row">Scale</th><td>On or off</td><td>Off</td><td>Turns the Scale operator on.</td></tr>
+<tr><th scope="row">Slide</th><td>On or off</td><td>Off</td><td>Turns the Slide operator on.</td></tr>
+<tr><th scope="row">Time</th><td>On or off</td><td>Off</td><td>Turns the Time operator on. It also needs Time Remapping on the layer.</td></tr>
+<tr><th scope="row">Ease In</th><td>0 to 10</td><td>1</td><td>Frames a twitch takes to build up. 0 snaps in.</td></tr>
+<tr><th scope="row">Ease Out</th><td>0 to 10</td><td>1</td><td>Frames a twitch takes to fade away. 0 snaps out.</td></tr>
+<tr><th scope="row">Border</th><td>Mirror, Tile, Ignore, Expand</td><td>Mirror</td><td>What fills the edges when a slide or zoom pulls the picture away. Ignore leaves them transparent and Expand stretches the edge pixels.</td></tr>
+<tr><th scope="row">Show Twitch Only</th><td>On or off</td><td>Off</td><td>Shows only frames where something twitches. Every other frame is transparent.</td></tr>
+<tr><th scope="row">Seed</th><td>0 to 10000</td><td>0</td><td>Changes the random pattern. The same Seed always gives the same result.</td></tr>
+<tr><th scope="row">Randomize Minimum</th><td>0 to 100</td><td>0</td><td>The smallest twitch size, as a percentage of the biggest. Raise it so twitches are never tiny.</td></tr>
+<tr><th scope="row">Freeze Twitch</th><td>On or off</td><td>Off</td><td>Holds the twitch from one moment in time for the whole clip.</td></tr>
+<tr><th scope="row">Freeze Time (s)</th><td>0 to 100000</td><td>0</td><td>The moment Freeze Twitch holds, in seconds.</td></tr></tbody></table></div></details>
+<details><summary>Blur</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Blur Amount</th><td>0 to 200</td><td>50</td><td>Largest blur radius.</td></tr>
+<tr><th scope="row">Blur Twitches [sec]</th><td>0 to 10</td><td>1</td><td>Blur twitches per second, multiplied by Speed.</td></tr>
+<tr><th scope="row">Blur Tint</th><td>Color</td><td>#FFFFFF</td><td>Color multiplied into the blur.</td></tr>
+<tr><th scope="row">Blur Holdout</th><td>0 to 100</td><td>0</td><td>Brightness below this stays out of the blur, so only highlights blur.</td></tr>
+<tr><th scope="row">Blur Holdout Sharpness</th><td>0 to 100</td><td>50</td><td>How hard the edge of the holdout is. 100 is a hard cut.</td></tr>
+<tr><th scope="row">Blur Boost</th><td>0 to 500</td><td>0</td><td>Brightens the blur, in percent.</td></tr>
+<tr><th scope="row">Blur Opacity</th><td>0 to 100</td><td>100</td><td>How strongly the blur mixes over the picture.</td></tr>
+<tr><th scope="row">Blur Transfer Mode</th><td>Normal, Add, Screen, Multiply, Overlay, Lighten</td><td>Normal</td><td>How the blur combines with the picture.</td></tr>
+<tr><th scope="row">Blur Aspect</th><td>-1 to 1</td><td>0</td><td>Stretches the blur. 1 is horizontal, -1 is vertical, 0 is round.</td></tr>
+<tr><th scope="row">Use Lens Blur</th><td>On or off</td><td>Off</td><td>Uses a flat, round bokeh blur instead of a smooth Gaussian one.</td></tr>
+<tr><th scope="row">Unique Blur Seed</th><td>0 to 10000</td><td>0</td><td>Gives Blur its own random timing. 0 shares timing with the other operators.</td></tr></tbody></table></div></details>
+<details><summary>Color</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Color Amount</th><td>0 to 200</td><td>50</td><td>How far the picture is colorized. Above 100 pushes it further.</td></tr>
+<tr><th scope="row">Color Twitches [sec]</th><td>0 to 10</td><td>1</td><td>Color twitches per second, multiplied by Speed.</td></tr>
+<tr><th scope="row">Colorize</th><td>Color</td><td>#FFA200</td><td>The color the picture twitches toward.</td></tr>
+<tr><th scope="row">Color Randomize</th><td>0 to 100</td><td>0</td><td>How far the hue wanders from Colorize at random.</td></tr>
+<tr><th scope="row">Unique Color Seed</th><td>0 to 10000</td><td>0</td><td>Gives Color its own random timing.</td></tr></tbody></table></div></details>
+<details><summary>Light</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Light Amount</th><td>0 to 300</td><td>100</td><td>Strength of the exposure change.</td></tr>
+<tr><th scope="row">Light Twitches [sec]</th><td>0 to 20</td><td>1</td><td>Light twitches per second, multiplied by Speed.</td></tr>
+<tr><th scope="row">Light Behaviour</th><td>Brighter, Darker, Both</td><td>Brighter</td><td>Whether twitches get brighter, darker or either.</td></tr>
+<tr><th scope="row">Unique Light Seed</th><td>0 to 10000</td><td>0</td><td>Gives Light its own random timing.</td></tr></tbody></table></div></details>
+<details><summary>Scale</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Scale Amount</th><td>-200 to 200</td><td>50</td><td>How far the picture zooms. Negative values zoom out.</td></tr>
+<tr><th scope="row">Scale Twitches [sec]</th><td>0 to 10</td><td>1</td><td>Scale twitches per second, multiplied by Speed.</td></tr>
+<tr><th scope="row">Scale Origin</th><td>A point on the layer</td><td>Center</td><td>The point the zoom is anchored on.</td></tr>
+<tr><th scope="row">Scale Origin Randomize</th><td>0 to 100</td><td>0</td><td>Moves the anchor to a random spot, in percent of the layer.</td></tr>
+<tr><th scope="row">Scale Motion Blur</th><td>0 to 100</td><td>100</td><td>Motion blur on the zoom.</td></tr>
+<tr><th scope="row">Unique Scale Seed</th><td>0 to 10000</td><td>0</td><td>Gives Scale its own random timing.</td></tr></tbody></table></div></details>
+<details><summary>Slide</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Slide Amount</th><td>0 to 200</td><td>50</td><td>How far the picture slides.</td></tr>
+<tr><th scope="row">Slide Twitches [sec]</th><td>0 to 10</td><td>1</td><td>Slide twitches per second, multiplied by Speed.</td></tr>
+<tr><th scope="row">Slide Direction</th><td>Degrees</td><td>0 degrees</td><td>Slide direction in degrees. 0 is up and 90 is right.</td></tr>
+<tr><th scope="row">Slide Spread</th><td>0 to 1</td><td>0</td><td>How much the direction varies at random. 1 is any direction.</td></tr>
+<tr><th scope="row">Slide Tendency</th><td>-1 to 1</td><td>0</td><td>1 always slides along the direction, -1 always against it, 0 either way.</td></tr>
+<tr><th scope="row">Slide RGB Split</th><td>0 to 100</td><td>0</td><td>Splits red, green and blue apart while sliding.</td></tr>
+<tr><th scope="row">Slide Motion Blur</th><td>0 to 100</td><td>100</td><td>Motion blur on the slide.</td></tr>
+<tr><th scope="row">Unique Slide Seed</th><td>0 to 10000</td><td>0</td><td>Gives Slide its own random timing.</td></tr></tbody></table></div></details>
+<details><summary>Time</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Time Amount</th><td>0 to 100</td><td>50</td><td>Largest jump in footage time. 100 is one second.</td></tr>
+<tr><th scope="row">Time Twitches [sec]</th><td>0 to 10</td><td>1</td><td>Time twitches per second, multiplied by Speed.</td></tr>
+<tr><th scope="row">Time Direction</th><td>Both, Forward Only, Backward Only</td><td>Both</td><td>Whether the footage jumps forward, backward or either way.</td></tr>
+<tr><th scope="row">Unique Time Seed</th><td>0 to 10000</td><td>0</td><td>Gives Time its own random timing.</td></tr></tbody></table></div></details>
+<details><summary>Extra controls (not in Twitch)</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Frame Rate</th><td>1 to 240</td><td>30</td><td>The frame rate used to count Ease and Hold frames. Presets link it to the composition.</td></tr>
+<tr><th scope="row">Shutter Angle</th><td>0 to 720 (slider stops at 360)</td><td>180</td><td>Motion blur shutter in degrees. 180 is half a frame.</td></tr>
+<tr><th scope="row">Quality</th><td>Draft, Normal, High</td><td>Normal</td><td>Draft is fastest, High is smoothest.</td></tr>
+<tr><th scope="row">Hold Frames</th><td>0 to 10</td><td>1</td><td>Frames a twitch stays at full strength.</td></tr></tbody></table></div></details>
+</section>
+
+<section id="speed">
+  <h2>Speed and quality</h2>
+  <p>EC Twitch runs on the CPU inside EffectCraft's plug-in sandbox. In testing on a cloud server, a 1080p frame with one operator twitching took about 0.5 to 1.4 seconds, and about 3.5 seconds with all of them on. Your machine will differ. Frames where nothing is twitching cost almost nothing.</p>
+  <ul>
+    <li>Set <strong>Quality</strong> to <strong>Draft</strong> while you design.</li>
+    <li>Preview at half or quarter resolution.</li>
+    <li>Big blurs cost the same as small ones. The cost comes from the number of motion-blur samples and the frame size.</li>
+    <li>If a frame ever fails to render, EffectCraft leaves it unchanged instead of crashing.</li>
+  </ul>
+</section>
+
+<section id="own">
+  <h2>Save your own preset</h2>
+  <ol class="steps">
+    <li>Set up EC Twitch on a layer the way you like it.</li>
+    <li>Select <strong>EC Twitch</strong> in Effect Controls.</li>
+    <li>Choose <strong>Animation &gt; Save Animation Preset…</strong> and save the file in the Presets folder (<a href="#presets-install">make it first</a> if you haven't).</li>
+    <li>Choose <strong>Refresh List</strong> in the Effects &amp; Presets panel menu.</li>
+  </ol>
+  <p>It then shows up in the panel next to the others. Saving keeps the two expressions, so your preset animates right away.</p>
+</section>
+
+<section id="trouble">
+  <h2>If something goes wrong</h2>
+  <dl class="faq-list">
+    <dt>The effect looks frozen on one frame.</dt>
+    <dd>The <strong>Time (s)</strong> parameter needs its expression. See "Adding the effect from the Effects menu" above.</dd>
+    <dt>My presets aren't listed.</dt>
+    <dd>Most often the Presets folder doesn't exist or is in the wrong place. EffectCraft doesn't create it. Make <code>Documents\EffectCraft\Presets</code> as shown in <a href="#presets-install">Add the presets</a>, put the <code>.ecpreset</code> files directly inside it, then choose Refresh List and tick Show Animation Presets. Use <strong>Copy Presets Folder Path</strong> to see the exact folder EffectCraft reads.</dd>
+    <dt>My presets are in OneDrive\Documents.</dt>
+    <dd>EffectCraft doesn't look there. Move them to <code>C:\Users\&lt;you&gt;\Documents\EffectCraft\Presets</code>.</dd>
+    <dt>EC Twitch isn't in the Effects list.</dt>
+    <dd>The Plug-ins folder must exist and be named exactly <code>Plug-ins</code>. See <a href="#install">Install the plug-in</a>, then restart EffectCraft. The effect is under Stylize. The web version of EffectCraft can't run plug-ins.</dd>
+    <dt>I see "an effect with this id is already registered".</dt>
+    <dd>The plug-in is already loaded, usually because it is in the Plug-ins folder and you also loaded it from the menu. Nothing to fix.</dd>
+    <dt>Time does nothing.</dt>
+    <dd>Enable Time Remapping on the layer first, then apply a Time preset. Tick Time in the effect's Enable controls.</dd>
+    <dt>Playback is slow.</dt>
+    <dd>Use Draft quality and a lower preview resolution. See "Speed and quality".</dd>
+  </dl>
+</section>
+
+<section id="limits">
+  <h2>What this is and isn't</h2>
+  <ul>
+    <li><strong>Close, not identical.</strong> The controls, options and the idea of random twitches with eased in and out times follow Video Copilot's public descriptions of Twitch. Video Copilot doesn't publish the math. How far a slide moves or how bright a flash gets is tuned by eye, not matched to After Effects renders.</li>
+    <li><strong>Independent.</strong> It contains no Video Copilot code or assets, and it isn't affiliated with or endorsed by Video Copilot.</li>
+    <li><strong>CPU only.</strong> Heavy frames can take seconds at full size.</li>
+    <li><strong>One flat list of controls.</strong> No fold-out groups yet.</li>
+    <li><strong>Time</strong> needs a footage or pre-comp layer with Time Remapping on.</li>
+    <li><strong>Desktop and CLI.</strong> EffectCraft's web version can't run plug-ins.</li>
+    <li>You get 25 presets. Twitch's sound effects and video tutorials aren't included.</li>
+  </ul>
+</section>
+
+<section id="comments">
+  <h2>Comments</h2>
+  <p>People who tried it can leave a comment or a like here. Comments are posted on GitHub with a free GitHub account.</p>
+  <p class="cstate" id="cstate" role="status">Loading comments…</p>
+  <ul class="clist" id="clist" data-product="twitch"></ul>
+  <div id="utter" data-product="twitch"></div>
+  <div class="cbtns">
+    <a class="btn sm" data-comment-link="twitch" href="https://github.com/DioEnterRight/ec-plugins/issues/1" target="_blank" rel="noopener">Write a comment on GitHub</a>
+    <a class="btn ghost sm" data-thread="twitch" href="https://github.com/DioEnterRight/ec-plugins/issues/1" target="_blank" rel="noopener">Open the GitHub thread</a>
+  </div>
+</section>
+<section id="verify">
+  <h2>Check your download</h2>
+  <p>The SHA-256 of <code>EC_Twitch_v1.1.1.zip</code> is:</p>
+  <p class="sha">13cac76ef80c38112d2c3d4af34dd8dd0248ca1966182bc8f3a689a59729a59b</p>
+  <p>On Windows, run <code>Get-FileHash EC_Twitch_v1.1.1.zip</code> in PowerShell and compare.</p>
+</section>
+
+</main>
+</div>
+</div>
+<footer>
+  <div class="in">
+    <p>Store by DioEnterRight. EC Twitch and EC Deep Glow 2 are made by DioEnterRight, © 2026, all rights reserved: free to download and use with EffectCraft, including in paid work, but not to redistribute or resell. EC Outline Glow and EC Neon Outline are made by Slizzy and upgraded by DioEnterRight.</p>
+    <p>Independent work. Not affiliated with or endorsed by Video Copilot, Deep Glow or its makers, or EffectCraft. The names are used only to say what each effect is inspired by.</p>
+    <p>Download, like and comment numbers are read live from this project's GitHub page. There is no database.</p>
+  </div>
+</footer>
+<script src="../assets/config.js"></script>
+<script src="../assets/store.js"></script>
+</body>
+</html>

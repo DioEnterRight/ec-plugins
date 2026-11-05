@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EC Deep Glow 2: HDR glow for EffectCraft</title>
+<meta name="description" content="EC Deep Glow 2 makes bright parts of the picture glow like real light, in HDR, with step-by-step install instructions for EffectCraft.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B1D3F'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23FFB347' opacity='.35'/%3E%3Ccircle cx='16' cy='16' r='4.5' fill='%23FFF6E0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Spline+Sans+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/store.css">
+</head>
+<body data-accent="dg">
+<a class="skip" href="#main">Skip to the content</a>
+<header class="bar">
+  <a class="brand" href="../">EC Plug-ins<small>by DioEnterRight</small></a>
+  <nav aria-label="Plug-ins"><a href="../twitch/">EC Twitch</a><a href="../deep-glow-2/" aria-current="page">EC Deep Glow 2</a><a href="../outline-glow/">EC Outline Glow</a><a href="../neon-outline/">EC Neon Outline</a></nav>
+</header>
+<div style="display:contents">
+<header class="head">
+  <div>
+    <a class="back" href="../">← All plug-ins</a>
+    <h1>EC Deep Glow 2</h1>
+    <p class="pitch">Makes the bright parts of your picture glow like real light: a hot core and a long soft halo. It works in HDR, so values brighter than white keep glowing instead of clipping.</p>
+    <div class="buy">
+      <a class="btn" data-dl="deep-glow-2" href="../downloads/EC_Deep_Glow_2_v5.0.0.zip" download>Download zip (124 KB)</a>
+      <span class="meta">Version 5.0.0 · Stylize · EffectCraft desktop and CLI</span>
+    </div>
+    <ul class="stats" aria-label="EC Deep Glow 2 numbers from GitHub"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg><b data-stat="downloads" data-product="deep-glow-2">—</b> downloads</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><b data-stat="likes" data-product="deep-glow-2">—</b> likes</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><b data-stat="comments" data-product="deep-glow-2">—</b> comments</li></ul>
+    <div class="likebar">
+      <a class="btn ghost sm" data-like="deep-glow-2" href="https://github.com/DioEnterRight/ec-plugins/issues/2" target="_blank" rel="noopener"><svg width="16" height="16" style="vertical-align:-3px;margin-right:.4rem;fill:none;stroke:currentColor;stroke-width:1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Like on GitHub</a>
+      <a class="btn ghost sm" href="#comments">Read comments</a>
+      <small>Likes and comments live on GitHub. Click the thumbs-up or heart on the first post. A free GitHub account is needed.</small>
+    </div>
+  </div>
+  <a class="stage glow" data-live="glow" href="#install" aria-label="Live preview of EC Deep Glow 2">
+    <p class="word" aria-hidden="true"><span>Glow</span></p>
+    <p class="cap" aria-hidden="true">move over it</p>
+  </a>
+</header>
+<div class="shell">
+<nav class="rail" aria-label="On this page"><a href="#install">Install the plug-in</a><a href="#use">Add it to a layer</a><a href="#quick">The four main controls</a><a href="#recipes">Starting looks</a><a href="#how">How it works</a><a href="#controls">Controls</a><a href="#speed">Speed and quality</a><a href="#own">Save your own preset</a><a href="#trouble">If something goes wrong</a><a href="#limits">What this is and isn&#x27;t</a><a href="#comments">Comments</a></nav>
+<main id="main">
+
+<section id="install">
+  <h2>Install the plug-in</h2>
+  <p>The download is one zip. Inside are <code>INSTALL_WINDOWS.bat</code>, a <code>1_Plugin</code> folder and an <code>INSTALL.txt</code> with these same steps. There is only one file to install. Unzip the whole zip first. Don't run anything from inside the zip.</p>
+  <div class="callout"><p>Have an older <code>deep_glow_open_*.wasm</code> in your Plug-ins folder? Delete it first, or you will see two glow effects.</p></div>
+  <h3>Fastest on Windows: double-click the installer</h3>
+  <p>Inside the unzipped folder, double-click <code>INSTALL_WINDOWS.bat</code>. It makes the Plug-ins folder if it is missing and copies the plug-in. Then restart EffectCraft. If Windows asks whether to run the file, click <strong>Run</strong>.</p>
+  <h3>Or install by hand</h3>
+  <div class="callout warn"><p><strong>EffectCraft doesn't make the Plug-ins folder for you.</strong> If it isn't there, make it yourself. It must be named exactly <code>Plug-ins</code>, with a capital P and a dash.</p></div>
+  <ol class="steps">
+    <li>Open File Explorer. Click the address bar, type <code>%APPDATA%</code> and press Enter.</li>
+    <li>Open the <strong>EffectCraft</strong> folder. If there isn't one, start EffectCraft once and close it, or make a folder named <code>EffectCraft</code>.</li>
+    <li>Inside it, make a new folder named <code>Plug-ins</code>.</li>
+    <li>Copy <code>1_Plugin\ec_deep_glow_2.wasm</code> into that folder.</li>
+    <li>Restart EffectCraft. It loads every <code>.wasm</code> file in that folder when it starts. Search for <strong>EC Deep Glow 2</strong> in Effects &amp; Presets. It sits under <strong>Stylize</strong>.</li>
+  </ol>
+  <p>The full Plug-ins folder for each system:</p>
+  <div class="paths"><div class="os"><h3>Windows</h3><div class="pathrow"><code>%APPDATA%\EffectCraft\Plug-ins</code><button type="button" class="copy" data-copy="%APPDATA%\EffectCraft\Plug-ins" aria-label="Copy Windows path">Copy</button></div></div><div class="os"><h3>macOS</h3><div class="pathrow"><code>~/Library/Application Support/EffectCraft/Plug-ins</code><button type="button" class="copy" data-copy="~/Library/Application Support/EffectCraft/Plug-ins" aria-label="Copy macOS path">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>~/.config/effectcraft/Plug-ins</code><button type="button" class="copy" data-copy="~/.config/effectcraft/Plug-ins" aria-label="Copy Linux path">Copy</button></div></div></div>
+  <p>On macOS or Linux, run this in Terminal inside the unzipped folder. It makes the folder and copies the file:</p>
+  <div class="paths"><div class="os"><h3>macOS</h3><div class="pathrow"><code>mkdir -p ~/Library/Application\ Support/EffectCraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_deep_glow_2.wasm ~/Library/Application\ Support/EffectCraft/Plug-ins/</code><button type="button" class="copy" data-copy="mkdir -p ~/Library/Application\ Support/EffectCraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_deep_glow_2.wasm ~/Library/Application\ Support/EffectCraft/Plug-ins/" aria-label="Copy the macOS command">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>mkdir -p ~/.config/effectcraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_deep_glow_2.wasm ~/.config/effectcraft/Plug-ins/</code><button type="button" class="copy" data-copy="mkdir -p ~/.config/effectcraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_deep_glow_2.wasm ~/.config/effectcraft/Plug-ins/" aria-label="Copy the Linux command">Copy</button></div></div></div>
+  <p>On the Windows portable build, use <code>EffectCraftData\Plug-ins</code> next to <code>EffectCraft.exe</code>. The installer is for the normal installed EffectCraft only.</p>
+  <div class="callout"><p>Want to try it before copying anything? Choose <strong>Effect &gt; Load Effect Plug-in…</strong> and pick <code>ec_deep_glow_2.wasm</code>. It loads right away.</p></div>
+</section>
+
+<section id="use">
+  <h2>Add it to a layer</h2>
+  <ol class="steps">
+    <li>Select a layer that has bright parts: lights, highlights, or bright text on black.</li>
+    <li>Double-click <strong>EC Deep Glow 2</strong> in Effects &amp; Presets. You can also drag it onto the layer.</li>
+    <li>Change the controls in <strong>Effect Controls</strong>. The next section shows the four to start with.</li>
+  </ol>
+  <p>Nothing needs an expression and there are no presets to install. It glows right away with the defaults.</p>
+</section>
+
+<section id="quick">
+  <h2>The four main controls</h2>
+  <div class="scroll"><table class="ref">
+    <thead><tr><th scope="col">Control</th><th scope="col">Default</th><th scope="col">What to do with it</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Threshold</th><td>35</td><td>Lower it to glow more of the picture. Raise it so only the brightest parts glow. Above 100 only HDR super-whites glow.</td></tr>
+      <tr><th scope="row">Radius</th><td>300</td><td>How far the glow spreads, in pixels. A bigger radius gives a wider and dimmer glow, because the glow only moves light around.</td></tr>
+      <tr><th scope="row">Exposure</th><td>1.5</td><td>Glow brightness in stops. Each +1 doubles the glow.</td></tr>
+      <tr><th scope="row">Intensity</th><td>100</td><td>Glow strength in percent, on top of Exposure.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><p>Not sure which pixels are glowing? Set <strong>View</strong> to <strong>Glow Input</strong> to see them, then set it back to <strong>Final Result</strong>.</p></div>
+</section>
+
+<section id="recipes">
+  <h2>Starting looks</h2>
+  <p>There are no preset files for Deep Glow 2. Here are values to type in. Change only the controls listed and leave the others at their defaults. They are starting points, so adjust by eye.</p>
+  <div class="scroll"><table class="recipes">
+    <thead><tr><th scope="col">Look</th><th scope="col">Set these</th><th scope="col">Good for</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Soft bloom</th><td>Threshold 60, Radius 150, Exposure 0.5, Intensity 80</td><td>A gentle haze on highlights.</td></tr>
+      <tr><th scope="row">Hot streak</th><td>Aspect Ratio 4, Radius 400, Threshold 70</td><td>A wide, anamorphic-style streak across lights. Tick Enable Angle and set Angle to point it another way.</td></tr>
+      <tr><th scope="row">Only the brightest</th><td>Threshold 150, Exposure 2</td><td>HDR footage, where only super-bright lights should glow.</td></tr>
+      <tr><th scope="row">Aperture glow</th><td>Glow Mode Lens Iris, Iris Blades 6, Radius 200</td><td>Glow shaped like a camera aperture. It is slower, so use Draft while you design.</td></tr>
+      <tr><th scope="row">Glow on its own</th><td>View Glow Only</td><td>Putting the glow over other footage with a blend mode.</td></tr>
+      <tr><th scope="row">Warm tint</th><td>Tint Amount 60 (Tint Mode 3-Tone)</td><td>Orange to cream glow from the default tint colors.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="how">
+  <h2>How it works</h2>
+  <p>EC Deep Glow 2 picks the bright pixels, spreads their light outward, and adds it back over the picture. The spread follows the law of real light: a hot core and a long, soft tail. <strong>Radius</strong> is how far the tail reaches and <strong>Falloff</strong> is how fast it fades.</p>
+  <p>The glow only moves light around. It never adds or loses any, so the total brightness stays the same as you change the radius. That is why a big radius looks dimmer: the same light covers more area. Raise <strong>Exposure</strong> to bring it back up.</p>
+  <p>It works in HDR. Pixels brighter than white keep their full brightness and keep glowing, instead of being cut off at white.</p>
+</section>
+
+<section id="controls">
+  <h2>Controls</h2>
+  <p>58 controls, grouped here by job. In Effect Controls they are one flat list in the same order and with the same names as Deep Glow 2, so tutorials are easy to follow. EffectCraft plug-ins can't have fold-out groups yet.</p>
+  <details open><summary>Glow</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Threshold</th><td>0 to 400 (slider stops at 100)</td><td>35</td><td>Which pixels glow. 100 is white. Above 100 only HDR super-white pixels glow.</td></tr>
+<tr><th scope="row">Threshold Smooth</th><td>0 to 100</td><td>50</td><td>How soft the edge of the threshold is. 0 is a hard cut.</td></tr>
+<tr><th scope="row">Threshold Mode</th><td>Luminance, Chrominance</td><td>Luminance</td><td>Luminance tests brightness. Chrominance tests the brightest color channel.</td></tr>
+<tr><th scope="row">Saturation Bias</th><td>0 to 100</td><td>0</td><td>Fades grey light out of the glow so colorful light glows. 100 removes all grey light.</td></tr>
+<tr><th scope="row">Radius</th><td>1 to 5000 (slider stops at 1000)</td><td>300</td><td>How far the glow spreads, in pixels at full resolution.</td></tr>
+<tr><th scope="row">Exposure</th><td>-8 to 12 (slider stops at 6)</td><td>1.5</td><td>Glow brightness in stops. Each +1 doubles it.</td></tr>
+<tr><th scope="row">Intensity</th><td>0 to 1000 (slider stops at 300)</td><td>100</td><td>Glow strength in percent. 100 is normal.</td></tr>
+<tr><th scope="row">Glow Mode</th><td>Exponential, Pure Exponential, Lens Iris</td><td>Exponential</td><td>Exponential is the real-light look, with a hot core and a long tail. Pure Exponential is softer with a shorter tail. Lens Iris shapes the glow like a camera aperture.</td></tr>
+<tr><th scope="row">Falloff</th><td>0.25 to 4</td><td>2</td><td>How fast the glow fades with distance. 2 is the inverse-square law. Lower values give a longer tail.</td></tr>
+<tr><th scope="row">Scene Gamma</th><td>0.2 to 5</td><td>1</td><td>The threshold is applied in display space and the blur in linear light. 1 turns this off.</td></tr></tbody></table></div></details>
+<details><summary>Shape</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Aspect Ratio</th><td>0.1 to 10</td><td>1</td><td>Stretches the glow. Above 1 is wide and below 1 is tall. The glow keeps the same total area.</td></tr>
+<tr><th scope="row">Enable Angle</th><td>On or off</td><td>Off</td><td>Turns on Angle. Only matters when Aspect Ratio is not 1.</td></tr>
+<tr><th scope="row">Angle</th><td>-360 to 360</td><td>0</td><td>Rotates a stretched glow.</td></tr>
+<tr><th scope="row">Multiply Red</th><td>0.01 to 8</td><td>1</td><td>Multiplies the glow radius for the red channel.</td></tr>
+<tr><th scope="row">Multiply Green</th><td>0.01 to 8</td><td>1</td><td>Multiplies the glow radius for the green channel.</td></tr>
+<tr><th scope="row">Multiply Blue</th><td>0.01 to 8</td><td>1</td><td>Multiplies the glow radius for the blue channel.</td></tr></tbody></table></div></details>
+<details><summary>Color</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Chromatic Aberration</th><td>0 to 100</td><td>0</td><td>Colored fringes on the glow. 0 is off.</td></tr>
+<tr><th scope="row">Aberration Mode</th><td>Radius Offset, Pixel Offset, Both</td><td>Radius Offset</td><td>Whether Chromatic Aberration changes the glow radius per channel, moves pixels, or both.</td></tr>
+<tr><th scope="row">Aberration Channels</th><td>Red &amp; Blue, Red &amp; Green, Green &amp; Blue, Red, Green, Blue</td><td>Red &amp; Blue</td><td>Which two color channels move apart in Pixel Offset aberration. The first moves out and the second moves in.</td></tr>
+<tr><th scope="row">Shuffle Channels</th><td>RGB, RBG, GRB, GBR, BRG, BGR</td><td>RGB</td><td>Changes which color channel gets which radius multiplier from Glow Aberration.</td></tr>
+<tr><th scope="row">Tint Mode</th><td>3-Tone, Inner &amp; Outer</td><td>3-Tone</td><td>3-Tone uses Low, Mid and High colors. Inner &amp; Outer uses two colors.</td></tr>
+<tr><th scope="row">Tint Amount (3-Tone)</th><td>0 to 100</td><td>0</td><td>How much the 3-Tone tint colors the glow. Used when Tint Mode is 3-Tone.</td></tr>
+<tr><th scope="row">Tint Low</th><td>Color</td><td>#FF731A</td><td>Tint color for the dimmest part of the glow.</td></tr>
+<tr><th scope="row">Tint Mid</th><td>Color</td><td>#FFBF73</td><td>Tint color for the middle of the glow.</td></tr>
+<tr><th scope="row">Tint High</th><td>Color</td><td>#FFF2D9</td><td>Tint color for the brightest part of the glow.</td></tr>
+<tr><th scope="row">Tint Blend Mode</th><td>Multiply, Normal, Add, Screen, Overlay, Soft Light</td><td>Multiply</td><td>How the Inner &amp; Outer tint combines with the glow.</td></tr>
+<tr><th scope="row">Color Inner</th><td>Color</td><td>#FFE6B2</td><td>Tint color where the glow is bright.</td></tr>
+<tr><th scope="row">Color Outer</th><td>Color</td><td>#9966FF</td><td>Tint color where the glow is dim.</td></tr>
+<tr><th scope="row">Tint Strength</th><td>0 to 100</td><td>100</td><td>How strong the Inner &amp; Outer tint is.</td></tr></tbody></table></div></details>
+<details><summary>Lens Iris</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Iris Blades</th><td>0 to 16</td><td>6</td><td>Number of aperture blades. 0 to 2 gives a round aperture.</td></tr>
+<tr><th scope="row">Iris Rotation</th><td>-360 to 360</td><td>0</td><td>Rotates the aperture.</td></tr>
+<tr><th scope="row">Iris Iterations</th><td>1 to 64</td><td>16</td><td>How many rings build the aperture shape. More is smoother and slower.</td></tr>
+<tr><th scope="row">Radii Easing</th><td>0 to 100</td><td>50</td><td>How the rings are spaced. 100 spaces them evenly. Lower values pack them toward the center.</td></tr>
+<tr><th scope="row">Iris Sampling Quality</th><td>Low, Standard, High</td><td>Standard</td><td>Sampling quality of the aperture. High is sharper and much slower.</td></tr>
+<tr><th scope="row">Iris Opacity</th><td>0 to 100</td><td>100</td><td>Mixes the aperture-shaped glow with the round glow. 100 is all aperture.</td></tr>
+<tr><th scope="row">Iris Aspect Ratio</th><td>0.1 to 10</td><td>1</td><td>Stretches the aperture on its own. Aspect Ratio stretches the whole glow.</td></tr>
+<tr><th scope="row">Continuous Rasterization</th><td>On or off</td><td>On</td><td>On gives a smooth aperture. Off gives a crisp, stepped one.</td></tr></tbody></table></div></details>
+<details><summary>Lens Dirt</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Lens Dirt Opacity</th><td>0 to 100</td><td>0</td><td>How much lens dirt shows inside the glow. 0 is off.</td></tr>
+<tr><th scope="row">Lens Dirt Scale</th><td>0.05 to 10</td><td>1</td><td>Size of the dirt pattern.</td></tr>
+<tr><th scope="row">Lens Dirt Contrast</th><td>0.05 to 8</td><td>1</td><td>Contrast of the dirt pattern.</td></tr>
+<tr><th scope="row">Lens Dirt Seed</th><td>1 to 9999 (slider stops at 100)</td><td>1</td><td>Changes the dirt pattern.</td></tr>
+<tr><th scope="row">Inherit Glow Color</th><td>0 to 100</td><td>100</td><td>How much the dirt takes the glow&#x27;s color. 100 is all of it.</td></tr>
+<tr><th scope="row">Matte Exposure</th><td>-6 to 6</td><td>0</td><td>Brightness of the dirt matte, in stops.</td></tr>
+<tr><th scope="row">Matte Gamma</th><td>0.1 to 6</td><td>1</td><td>Gamma of the dirt matte.</td></tr></tbody></table></div></details>
+<details><summary>Output</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Source Opacity</th><td>0 to 100</td><td>100</td><td>How visible the original picture is under the glow.</td></tr>
+<tr><th scope="row">Blend Mode</th><td>Screen, Add, Normal, Lighten, Color Dodge, Linear Dodge, Overlay, Soft Light</td><td>Screen</td><td>How the glow combines with the picture. Screen is the default and is HDR-safe.</td></tr>
+<tr><th scope="row">Tone Mapping</th><td>None, Reinhard, ACES, Filmic, Reinhard 2, Lottes</td><td>None</td><td>A curve that compresses very bright glow so it does not blow out. None leaves it as it is.</td></tr>
+<tr><th scope="row">Tone Mapping Mix</th><td>0 to 100</td><td>100</td><td>How much of the tone-mapped glow is used. 100 is all of it.</td></tr>
+<tr><th scope="row">View</th><td>Final Result, Glow Only, Glow Input</td><td>Final Result</td><td>Final Result shows the result. Glow Only shows just the glow. Glow Input shows which pixels pass the threshold.</td></tr>
+<tr><th scope="row">Glow Only (Legacy)</th><td>On or off</td><td>Off</td><td>Older switch for showing only the glow. Use View instead.</td></tr>
+<tr><th scope="row">Unmult (Required for Alpha)</th><td>On or off</td><td>On</td><td>On lets the glow add to the layer&#x27;s transparency. Off keeps the original transparency.</td></tr>
+<tr><th scope="row">Dither</th><td>0 to 100</td><td>100</td><td>Adds fine noise to the glow to hide banding. 0 is off.</td></tr>
+<tr><th scope="row">Dither Monochromatic</th><td>On or off</td><td>On</td><td>On uses one noise value for all colors. Off uses separate noise for each color.</td></tr></tbody></table></div></details>
+<details><summary>Quality</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Quality</th><td>Draft, Low, Medium, Standard, High, Extreme, Custom</td><td>Medium</td><td>Draft is fastest and Extreme is smoothest. Custom unlocks the three Custom controls.</td></tr>
+<tr><th scope="row">Downsampling</th><td>0 to 6</td><td>0</td><td>How many times the picture is halved before it glows. Higher is faster and softer.</td></tr>
+<tr><th scope="row">Glow Steps Multiplier</th><td>1 to 8</td><td>3</td><td>How many Gaussian layers are used per octave. More is smoother and slower.</td></tr>
+<tr><th scope="row">Iterations</th><td>1 to 15</td><td>15</td><td>How many glow layers are built. Fewer is faster.</td></tr>
+<tr><th scope="row">Half Float</th><td>On or off</td><td>Off</td><td>Rounds the glow to 16-bit precision, to preview a half-float pipeline.</td></tr></tbody></table></div></details>
+</section>
+
+<section id="speed">
+  <h2>Speed and quality</h2>
+  <p>EC Deep Glow 2 runs on the CPU inside EffectCraft's plug-in sandbox, which is an interpreter, so it is slower than a native plug-in. Version 5.0 is about 2 to 5 times faster than 4.1.1 and skips dark parts of the picture. Measured in a copy of that sandbox on a slow server (a normal desktop is 2 to 3 times faster):</p>
+  <div class="scroll"><table class="ref"><thead><tr><th scope="col">Frame</th><th scope="col">Mostly dark picture</th><th scope="col">Bright full frame</th></tr></thead><tbody>
+<tr><th scope="row">1080p, default settings</th><td>1.0 s</td><td>2.3 s</td></tr>
+<tr><th scope="row">1080p, Draft</th><td>0.9 s</td><td>1.1 s</td></tr>
+<tr><th scope="row">1080p, Standard / Extreme</th><td>1.0 s</td><td>3.1 s / 3.9 s</td></tr>
+<tr><th scope="row">1080p, Aspect 3 + Angle</th><td>4.2 s</td><td>5.9 s</td></tr>
+<tr><th scope="row">1080p, Lens Iris, default</th><td>1.1 s</td><td>6.4 s</td></tr>
+<tr><th scope="row">4K, default settings</th><td>3.7 s</td><td>5.6 s</td></tr></tbody></table></div>
+  <ul>
+    <li>Set <strong>Quality</strong> to <strong>Draft</strong> while you design.</li>
+    <li>Preview at half or quarter resolution.</li>
+    <li>A frame that would take longer than about 10 seconds is made cheaper by the plug-in (a coarser glow) instead of freezing the app.</li>
+    <li>A 4K frame with a rotated glow works but needs about 750 MB of plug-in memory. Frames wider than about 5000 pixels (8K) do not fit and stay without glow.</li>
+  </ul>
+</section>
+
+<section id="own">
+  <h2>Save your own preset</h2>
+  <div class="callout warn"><p><strong>The Presets folder isn't there until you make it.</strong> Installing EffectCraft doesn't create it. EffectCraft reads presets from exactly this folder:</p></div>
+  <div class="paths"><div class="os"><h3>Windows</h3><div class="pathrow"><code>%USERPROFILE%\Documents\EffectCraft\Presets</code><button type="button" class="copy" data-copy="%USERPROFILE%\Documents\EffectCraft\Presets" aria-label="Copy Windows path">Copy</button></div></div><div class="os"><h3>macOS</h3><div class="pathrow"><code>~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="~/Documents/EffectCraft/Presets" aria-label="Copy macOS path">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="~/Documents/EffectCraft/Presets" aria-label="Copy Linux path">Copy</button></div></div></div>
+  <p>On Windows that means <code>C:\Users\&lt;your user name&gt;\Documents\EffectCraft\Presets</code>.</p>
+  <h3>Make the Presets folder on Windows</h3>
+  <ol class="steps">
+    <li>Open File Explorer. Click the address bar, type <code>%USERPROFILE%</code> and press Enter. You're now in <code>C:\Users\&lt;your user name&gt;</code>.</li>
+    <li>Open <strong>Documents</strong>. If there's no Documents folder there, make one named <code>Documents</code>.</li>
+    <li>Inside Documents, make a new folder named <code>EffectCraft</code>.</li>
+    <li>Inside EffectCraft, make a new folder named <code>Presets</code>.</li>
+  </ol>
+  <div class="callout"><p><strong>OneDrive:</strong> even if Windows keeps your Documents in OneDrive, EffectCraft still looks in <code>C:\Users\&lt;you&gt;\Documents</code>, not in <code>OneDrive\Documents</code>. Step 1 takes you to the right place.</p><p>To check, open the Effects &amp; Presets panel menu, choose <strong>Copy Presets Folder Path</strong>, and paste it into the File Explorer address bar. That's the folder EffectCraft reads.</p></div>
+  <p>On macOS or Linux, this Terminal line makes it:</p>
+  <div class="paths"><div class="os"><h3>macOS / Linux</h3><div class="pathrow"><code>mkdir -p ~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="mkdir -p ~/Documents/EffectCraft/Presets" aria-label="Copy the macOS / Linux command">Copy</button></div></div></div>
+  <h3>Save it</h3>
+  <ol class="steps">
+    <li>Set up EC Deep Glow 2 on a layer the way you like it.</li>
+    <li>Select <strong>EC Deep Glow 2</strong> in Effect Controls.</li>
+    <li>Choose <strong>Animation &gt; Save Animation Preset…</strong> and save the file in the Presets folder.</li>
+    <li>In the Effects &amp; Presets panel menu, choose <strong>Refresh List</strong>. Your preset shows up under <strong>* Animation Presets</strong>.</li>
+  </ol>
+</section>
+
+<section id="trouble">
+  <h2>If something goes wrong</h2>
+  <dl class="faq-list">
+    <dt>There is no glow on a frame.</dt>
+    <dd>The frame may be too heavy for the plug-in sandbox. Lower Quality, Radius or Iris Sampling Quality. Or lower Threshold so some pixels pass it. Set View to Glow Input to check.</dd>
+    <dt>I see two glow effects in the list.</dt>
+    <dd>Delete the old <code>deep_glow_open_*.wasm</code> from the Plug-ins folder and restart.</dd>
+    <dt>EC Deep Glow 2 isn't in the Effects list.</dt>
+    <dd>The Plug-ins folder must exist and be named exactly <code>Plug-ins</code>. See <a href="#install">Install the plug-in</a>, then restart EffectCraft. The effect is under Stylize. The web version of EffectCraft can't run plug-ins.</dd>
+    <dt>I see "an effect with this id is already registered".</dt>
+    <dd>The plug-in is already loaded, usually because it is in the Plug-ins folder and you also loaded it from the menu. Nothing to fix.</dd>
+    <dt>The glow looks too dim or too bright.</dt>
+    <dd>Change Exposure first. Each +1 doubles it. A bigger Radius spreads the same light over more area, so raise Exposure to match.</dd>
+    <dt>The aperture shape looks round.</dt>
+    <dd>Blade shapes show most clearly at Standard and High sampling. At Low sampling, and in the far tail of very large radii, the aperture fades to a circle.</dd>
+  </dl>
+</section>
+
+<section id="limits">
+  <h2>What this is and isn't</h2>
+  <ul>
+    <li><strong>Close, not proven identical.</strong> It has every control that Deep Glow 2 documents, except the few listed below. Nobody has compared its numbers with real Deep Glow 2 renders yet, so treat the exact look as close in idea.</li>
+    <li><strong>Independent.</strong> It was built from public documentation and observed behavior. It contains no code or assets from Deep Glow 2 and isn't affiliated with or endorsed by its makers.</li>
+    <li><strong>No picture-layer inputs.</strong> EffectCraft's plug-in format can't take layer inputs, so Mask, Iris and Lens Dirt layers aren't there. The plug-in draws its own aperture and dirt instead. Buffer Expansion, grouped panels and buttons are missing for the same reason.</li>
+    <li><strong>CPU only.</strong> Heavy frames can take seconds at full size.</li>
+    <li><strong>Desktop and CLI.</strong> EffectCraft's web version can't run plug-ins.</li>
+  </ul>
+</section>
+
+<section id="comments">
+  <h2>Comments</h2>
+  <p>People who tried it can leave a comment or a like here. Comments are posted on GitHub with a free GitHub account.</p>
+  <p class="cstate" id="cstate" role="status">Loading comments…</p>
+  <ul class="clist" id="clist" data-product="deep-glow-2"></ul>
+  <div id="utter" data-product="deep-glow-2"></div>
+  <div class="cbtns">
+    <a class="btn sm" data-comment-link="deep-glow-2" href="https://github.com/DioEnterRight/ec-plugins/issues/2" target="_blank" rel="noopener">Write a comment on GitHub</a>
+    <a class="btn ghost sm" data-thread="deep-glow-2" href="https://github.com/DioEnterRight/ec-plugins/issues/2" target="_blank" rel="noopener">Open the GitHub thread</a>
+  </div>
+</section>
+<section id="verify">
+  <h2>Check your download</h2>
+  <p>The SHA-256 of <code>EC_Deep_Glow_2_v5.0.0.zip</code> is:</p>
+  <p class="sha">19020b5fd6ce14d9756b9f4b6337563c82e443aa27fb16ce76c55a5fe3aca404</p>
+  <p>On Windows, run <code>Get-FileHash EC_Deep_Glow_2_v5.0.0.zip</code> in PowerShell and compare.</p>
+</section>
+
+</main>
+</div>
+</div>
+<footer>
+  <div class="in">
+    <p>Store by DioEnterRight. EC Twitch and EC Deep Glow 2 are made by DioEnterRight, © 2026, all rights reserved: free to download and use with EffectCraft, including in paid work, but not to redistribute or resell. EC Outline Glow and EC Neon Outline are made by Slizzy and upgraded by DioEnterRight.</p>
+    <p>Independent work. Not affiliated with or endorsed by Video Copilot, Deep Glow or its makers, or EffectCraft. The names are used only to say what each effect is inspired by.</p>
+    <p>Download, like and comment numbers are read live from this project's GitHub page. There is no database.</p>
+  </div>
+</footer>
+<script src="../assets/config.js"></script>
+<script src="../assets/store.js"></script>
+</body>
+</html>
