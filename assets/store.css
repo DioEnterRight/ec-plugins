@@ -69,6 +69,21 @@ code{font-size:.86em;background:var(--panel);padding:.12em .4em;border-radius:4p
 .stage.glow::before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(circle at var(--px) var(--py),rgba(255,170,60,calc(.30 * var(--g))),rgba(255,120,30,calc(.10 * var(--g))) 38%,transparent 66%)}
 .stage.glow .word{color:#FFF6E0;text-shadow:0 0 calc(var(--g) * 6px) #fff,0 0 calc(var(--g) * 22px) #FFC060,0 0 calc(var(--g) * 60px) #FF8A1E,0 0 calc(var(--g) * 130px) #FF6A00}
 
+/* EC Prism Glow: red/green/blue channel dispersion, same idea as Width Red/Green/Blue */
+.stage.prism{--g:.75;--d:8px}
+.stage.prism::before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(circle at 50% 55%,rgba(255,255,255,calc(.06 * var(--g))),transparent 60%)}
+.stage.prism .word{color:#F6F4FF}
+.stage.prism .word span{text-shadow:
+    calc(var(--d) * -1) 0 calc(var(--g) * 28px) rgba(255,70,80,.7),
+    0 calc(var(--d) * .35) calc(var(--g) * 34px) rgba(70,255,150,.55),
+    var(--d) 0 calc(var(--g) * 42px) rgba(80,150,255,.75),
+    0 0 calc(var(--g) * 10px) #fff,
+    0 0 calc(var(--g) * 90px) rgba(255,255,255,.14)}
+.stage.prism .pills li{--on:0}
+.stage.prism .pills li:nth-child(1){border-color:color-mix(in srgb,#FF4650 calc(var(--on) * 100%),#3A3E78);color:color-mix(in srgb,#fff calc(var(--on) * 100%),#9EA3D6);background:color-mix(in srgb,#FF4650 calc(var(--on) * 60%),transparent)}
+.stage.prism .pills li:nth-child(2){border-color:color-mix(in srgb,#46FF96 calc(var(--on) * 100%),#3A3E78);color:color-mix(in srgb,#fff calc(var(--on) * 100%),#9EA3D6);background:color-mix(in srgb,#46FF96 calc(var(--on) * 60%),transparent)}
+.stage.prism .pills li:nth-child(3){border-color:color-mix(in srgb,#5096FF calc(var(--on) * 100%),#3A3E78);color:color-mix(in srgb,#fff calc(var(--on) * 100%),#9EA3D6);background:color-mix(in srgb,#5096FF calc(var(--on) * 60%),transparent)}
+
 .stage svg.neon{position:relative;z-index:1;width:86%;height:auto;overflow:visible;--c:#08B8FF;--c2:#5A0DFF;--g:.85;--h:0deg;
   filter:drop-shadow(0 0 calc(var(--g) * 3px) var(--c)) drop-shadow(0 0 calc(var(--g) * 12px) var(--c)) drop-shadow(0 0 calc(var(--g) * 30px) var(--c2)) hue-rotate(var(--h))}
 .stage svg.neon text{font-family:var(--sans);font-weight:800;font-size:168px;letter-spacing:-5px;fill:none;stroke:var(--c);stroke-width:4;stroke-linejoin:round}
