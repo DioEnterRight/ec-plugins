@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EC Prism Glow for EffectCraft</title>
+<meta name="description" content="EC Prism Glow is a multi-octave HDR glow for EffectCraft in the shape of Sapphire's S_Glow, with every control, name and default from the real panel.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B1D3F'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23FFB347' opacity='.35'/%3E%3Ccircle cx='16' cy='16' r='4.5' fill='%23FFF6E0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Spline+Sans+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/store.css">
+</head>
+<body data-accent="pg">
+<a class="skip" href="#main">Skip to the content</a>
+<header class="bar">
+  <a class="brand" href="../">EC Plug-ins<small>by DioEnterRight</small></a>
+  <nav aria-label="Plug-ins"><a href="../twitch/">EC Twitch</a><a href="../deep-glow-2/">EC Deep Glow 2</a><a href="../outline-glow/">EC Outline Glow</a><a href="../neon-outline/">EC Neon Outline</a><a href="../prism-glow/" aria-current="page">EC Prism Glow</a></nav>
+</header>
+<div style="display:contents">
+<header class="head">
+  <div>
+    <a class="back" href="../">← All plug-ins</a>
+    <h1>EC Prism Glow</h1>
+    <p class="pitch">A multi-octave glow with a hot core and a soft power-law falloff: every control, name, default and order follow Sapphire's S_Glow panel.</p>
+    <div class="buy">
+      <a class="btn" data-dl="prism-glow" href="../downloads/EC_Prism_Glow_v0.1.0.zip" download>Download zip (43 KB)</a>
+      <span class="meta">Version 0.1.0 · Stylize · EffectCraft desktop and CLI</span>
+    </div>
+    <ul class="stats" aria-label="EC Prism Glow numbers from GitHub"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg><b data-stat="downloads" data-product="prism-glow">—</b> downloads</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><b data-stat="likes" data-product="prism-glow">—</b> likes</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><b data-stat="comments" data-product="prism-glow">—</b> comments</li></ul>
+    <div class="likebar">
+      <a class="btn ghost sm" data-like="prism-glow" href="https://github.com/DioEnterRight/ec-plugins/issues/5" target="_blank" rel="noopener"><svg width="16" height="16" style="vertical-align:-3px;margin-right:.4rem;fill:none;stroke:currentColor;stroke-width:1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Like on GitHub</a>
+      <a class="btn ghost sm" href="#comments">Read comments</a>
+      <small>Likes and comments live on GitHub. Click the thumbs-up or heart on the first post. A free GitHub account is needed.</small>
+    </div>
+  </div>
+  <a class="stage glow" data-live="glow" href="#install" aria-label="Live preview of EC Prism Glow">
+    <p class="word" aria-hidden="true"><span>Prism</span></p>
+    <p class="cap" aria-hidden="true">move over it</p>
+  </a>
+</header>
+<div class="shell">
+<nav class="rail" aria-label="On this page"><a href="#install">Install the plug-in</a><a href="#use">Add it to a layer</a><a href="#quick">The four main controls</a><a href="#how">How it works</a><a href="#controls">Controls</a><a href="#speed">Speed and quality</a><a href="#own">Save your own preset</a><a href="#trouble">If something goes wrong</a><a href="#limits">What this is and isn&#x27;t</a><a href="#comments">Comments</a></nav>
+<main id="main">
+
+<section id="install">
+  <h2>Install the plug-in</h2>
+  <p>The download is one zip. Inside are <code>INSTALL_WINDOWS.bat</code>, a <code>1_Plugin</code> folder, a <code>source</code> folder and an <code>INSTALL.txt</code> with these same steps. There is only one file to install. Unzip the whole zip first. Don't run anything from inside the zip.</p>
+  <h3>Fastest on Windows: double-click the installer</h3>
+  <p>Inside the unzipped folder, double-click <code>INSTALL_WINDOWS.bat</code>. It makes the Plug-ins folder if it is missing and copies the plug-in. Then restart EffectCraft. If Windows asks whether to run the file, click <strong>Run</strong>.</p>
+  <h3>Or install by hand</h3>
+  <div class="callout warn"><p><strong>EffectCraft doesn't make the Plug-ins folder for you.</strong> If it isn't there, make it yourself. It must be named exactly <code>Plug-ins</code>, with a capital P and a dash.</p></div>
+  <ol class="steps">
+    <li>Open File Explorer. Click the address bar, type <code>%APPDATA%</code> and press Enter.</li>
+    <li>Open the <strong>EffectCraft</strong> folder. If there isn't one, start EffectCraft once and close it, or make a folder named <code>EffectCraft</code>.</li>
+    <li>Inside it, make a new folder named <code>Plug-ins</code>.</li>
+    <li>Copy <code>1_Plugin\ec_prism_glow.wasm</code> into that folder.</li>
+    <li>Restart EffectCraft. It loads every <code>.wasm</code> file in that folder when it starts. Search for <strong>EC Prism Glow</strong> in Effects &amp; Presets. It sits under <strong>Stylize</strong>.</li>
+  </ol>
+  <p>The full Plug-ins folder for each system:</p>
+  <div class="paths"><div class="os"><h3>Windows</h3><div class="pathrow"><code>%APPDATA%\EffectCraft\Plug-ins</code><button type="button" class="copy" data-copy="%APPDATA%\EffectCraft\Plug-ins" aria-label="Copy Windows path">Copy</button></div></div><div class="os"><h3>macOS</h3><div class="pathrow"><code>~/Library/Application Support/EffectCraft/Plug-ins</code><button type="button" class="copy" data-copy="~/Library/Application Support/EffectCraft/Plug-ins" aria-label="Copy macOS path">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>~/.config/effectcraft/Plug-ins</code><button type="button" class="copy" data-copy="~/.config/effectcraft/Plug-ins" aria-label="Copy Linux path">Copy</button></div></div></div>
+  <p>On macOS or Linux, run this in Terminal inside the unzipped folder. It makes the folder and copies the file:</p>
+  <div class="paths"><div class="os"><h3>macOS</h3><div class="pathrow"><code>mkdir -p ~/Library/Application\ Support/EffectCraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_prism_glow.wasm ~/Library/Application\ Support/EffectCraft/Plug-ins/</code><button type="button" class="copy" data-copy="mkdir -p ~/Library/Application\ Support/EffectCraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_prism_glow.wasm ~/Library/Application\ Support/EffectCraft/Plug-ins/" aria-label="Copy the macOS command">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>mkdir -p ~/.config/effectcraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_prism_glow.wasm ~/.config/effectcraft/Plug-ins/</code><button type="button" class="copy" data-copy="mkdir -p ~/.config/effectcraft/Plug-ins &amp;&amp; cp 1_Plugin/ec_prism_glow.wasm ~/.config/effectcraft/Plug-ins/" aria-label="Copy the Linux command">Copy</button></div></div></div>
+  <p>On the Windows portable build, use <code>EffectCraftData\Plug-ins</code> next to <code>EffectCraft.exe</code>. The installer is for the normal installed EffectCraft only.</p>
+  <div class="callout"><p>Want to try it before copying anything? Choose <strong>Effect &gt; Load Effect Plug-in…</strong> and pick <code>ec_prism_glow.wasm</code>. It loads right away.</p></div>
+</section>
+
+<section id="use">
+  <h2>Add it to a layer</h2>
+  <ol class="steps">
+    <li>Select a layer that has bright parts: lights, highlights, or bright text on black.</li>
+    <li>Double-click <strong>EC Prism Glow</strong> in Effects &amp; Presets. You can also drag it onto the layer.</li>
+    <li>Change the controls in <strong>Effect Controls</strong>. The next section shows the four to start with.</li>
+  </ol>
+  <p>Nothing needs an expression and there are no presets to install. It glows right away with the defaults.</p>
+</section>
+
+<section id="quick">
+  <h2>The four main controls</h2>
+  <div class="scroll"><table class="ref">
+    <thead><tr><th scope="col">Control</th><th scope="col">Default</th><th scope="col">What to do with it</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Brightness</th><td>2</td><td>Overall glow strength. Raise it for more glow.</td></tr>
+      <tr><th scope="row">Threshold</th><td>0.5</td><td>Which pixels start the glow. Lower it to glow more of the picture.</td></tr>
+      <tr><th scope="row">Glow Width</th><td>0.4</td><td>How wide the glow spreads, as a fraction of the frame.</td></tr>
+      <tr><th scope="row">Combine</th><td>Screen</td><td>How the glow combines with the picture. Screen is HDR-safe and the default.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><p>Not sure which pixels are glowing? Set <strong>Show</strong> to <strong>Threshold</strong> to see them, then set it back to <strong>Result</strong>.</p></div>
+</section>
+
+<section id="how">
+  <h2>How it works</h2>
+  <p>EC Prism Glow builds a stack of progressively larger gaussian blurs (an octave pyramid) and sums them with falling weight per octave, approximating the long soft power-law falloff of real light scatter — a bright core with a long, dim tail, rather than a single blurred blob.</p>
+  <p><strong>Width Red</strong>, <strong>Width Green</strong> and <strong>Width Blue</strong> scale the spread per channel, which is what gives the glow a soft colored fringe at its edges instead of a flat white halo. <strong>Width X</strong> and <strong>Width Y</strong> stretch the glow horizontally or vertically.</p>
+  <p><strong>Light Background</strong> switches the compositing model for glowing onto a bright background instead of a dark one, and when it's on, <strong>Combine</strong> has no effect — the two are alternate ways of laying the glow over the source, not a stack.</p>
+</section>
+
+<section id="controls">
+  <h2>Controls</h2>
+  <p>41 controls, grouped here by job, following the real S_Glow panel order. In Effect Controls they are one flat list, because EffectCraft plug-ins can't have fold-out groups yet.</p>
+
+  <details open><summary>Glow</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody>
+<tr><th scope="row">Brightness</th><td>0 to 100 (slider stops at 10)</td><td>2</td><td>Overall glow strength. Higher is brighter.</td></tr>
+<tr><th scope="row">Color</th><td>Color</td><td>White</td><td>Tints the glow. White keeps the source's own color.</td></tr>
+<tr><th scope="row">Threshold</th><td>0 to 100 (slider stops at 2)</td><td>0.5</td><td>Which pixels are bright enough to start glowing. Lower it to glow more of the picture.</td></tr>
+<tr><th scope="row">Threshold Add Color</th><td>Color</td><td>Black</td><td>A color added before the threshold test, to make colored pixels pass it more easily.</td></tr>
+<tr><th scope="row">Glow Width</th><td>0 to 100 (slider stops at 2)</td><td>0.4</td><td>How wide the glow spreads, as a fraction of the frame's own size.</td></tr>
+<tr><th scope="row">Width X</th><td>0 to 100 (slider stops at 4)</td><td>1</td><td>Stretches the glow horizontally. 0 removes horizontal spread.</td></tr>
+<tr><th scope="row">Width Y</th><td>0 to 100 (slider stops at 4)</td><td>1</td><td>Stretches the glow vertically. 0 removes vertical spread.</td></tr>
+<tr><th scope="row">Width Red</th><td>0 to 100 (slider stops at 4)</td><td>1</td><td>Scales the glow's spread for the red channel.</td></tr>
+<tr><th scope="row">Width Green</th><td>0 to 100 (slider stops at 4)</td><td>1.2</td><td>Scales the glow's spread for the green channel.</td></tr>
+<tr><th scope="row">Width Blue</th><td>0 to 100 (slider stops at 4)</td><td>1.4</td><td>Scales the glow's spread for the blue channel. Differing red/green/blue widths give the glow its soft colored fringe.</td></tr>
+<tr><th scope="row">Subpixel</th><td>On or off</td><td>On</td><td>Smooths the threshold edge at the pixel level instead of leaving it jagged.</td></tr>
+<tr><th scope="row">Show</th><td>Result, Threshold</td><td>Result</td><td>Result shows the composited image. Threshold shows exactly which pixels passed the threshold, before any blur.</td></tr>
+</tbody></table></div></details>
+
+<details><summary>Alpha and compositing</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody>
+<tr><th scope="row">Affect Alpha</th><td>0 to 100 (slider stops at 1)</td><td>0</td><td>How much the glow adds to the layer's transparency. 0 keeps the original alpha.</td></tr>
+<tr><th scope="row">Glow From Alpha</th><td>0 to 1</td><td>0</td><td>Generates glow from the layer's own alpha edge instead of its brightness.</td></tr>
+<tr><th scope="row">Glow Under Source</th><td>0 to 1</td><td>0</td><td>Puts the glow behind the original layer instead of on top of it.</td></tr>
+<tr><th scope="row">Light Background</th><td>0 to 1</td><td>0</td><td>Switches to a compositing model built for a bright background. When this is on, Combine has no effect.</td></tr>
+<tr><th scope="row">Source Opacity</th><td>0 to 1</td><td>1</td><td>How visible the original picture is under the glow.</td></tr>
+<tr><th scope="row">Combine</th><td>Mult, Add, Screen, Difference, Overlay</td><td>Screen</td><td>How the glow combines with the picture. Screen is HDR-safe and the default. Has no effect if Light Background is on.</td></tr>
+</tbody></table></div></details>
+
+<details><summary>Edges and atmosphere</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody>
+<tr><th scope="row">Edge Mode</th><td>Transparent, Reflect</td><td>Reflect</td><td>How the blur treats the edge of the frame. Reflect mirrors pixels back in so the glow doesn't fade at the border; Transparent treats outside the frame as empty.</td></tr>
+<tr><th scope="row">Bg Brightness</th><td>0 to 100 (slider stops at 4)</td><td>1</td><td>Brightness multiplier applied to the background before compositing, used with Light Background.</td></tr>
+<tr><th scope="row">Expand Borders</th><td>On or off</td><td>Off</td><td>Declared for layout only — see "What this is and isn't" below.</td></tr>
+<tr><th scope="row">Invert Mask</th><td>On or off</td><td>Off</td><td>Declared for layout only — see "What this is and isn't" below.</td></tr>
+<tr><th scope="row">Atmosphere Amp</th><td>0 to 100 (slider stops at 2)</td><td>0</td><td>Adds a drifting noise texture into the glow, like atmospheric haze. 0 is off.</td></tr>
+<tr><th scope="row">Atmosphere Freq</th><td>0.1 to 20 (slider stops at 10)</td><td>1</td><td>Size of the atmosphere noise pattern. Higher is finer-grained.</td></tr>
+<tr><th scope="row">Atmosphere Detail</th><td>0 to 1</td><td>0.6</td><td>How many noise octaves build the atmosphere texture. Higher is more detailed.</td></tr>
+<tr><th scope="row">Atmosphere Seed</th><td>0 to 1000 (slider stops at 10)</td><td>0.123</td><td>Changes the atmosphere's random pattern.</td></tr>
+<tr><th scope="row">Atmosphere Speed</th><td>-100 to 100 (slider stops at -10 to 10)</td><td>1</td><td>How fast the atmosphere drifts over time. Needs the Time (s) expression below to move.</td></tr>
+<tr><th scope="row">Show Glow Width</th><td>On or off</td><td>On</td><td>Declared for layout only — see "What this is and isn't" below.</td></tr>
+</tbody></table></div></details>
+
+<details><summary>Mocha mask (declared, inert)</summary><p class="note">EffectCraft's plug-in format has no tracking-mask input, so this whole block is declared for layout compatibility but does nothing while <code>Mocha Project</code> is 0 (the default). Leave it alone.</p><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody>
+<tr><th scope="row">Mocha Project</th><td>0 to 1000 (slider stops at 16)</td><td>0</td><td>Inert. Would pick a Mocha tracking project if EffectCraft supported layer mask inputs.</td></tr>
+<tr><th scope="row">Blur Mocha</th><td>0 to 100 (slider stops at 20)</td><td>0</td><td>Inert.</td></tr>
+<tr><th scope="row">Mocha Opacity</th><td>0 to 1</td><td>1</td><td>Inert.</td></tr>
+<tr><th scope="row">Invert Mocha</th><td>On or off</td><td>Off</td><td>Inert.</td></tr>
+<tr><th scope="row">Resize Mocha</th><td>0 to 2</td><td>1</td><td>Inert.</td></tr>
+<tr><th scope="row">Resize Rel X</th><td>0 to 2</td><td>1</td><td>Inert.</td></tr>
+<tr><th scope="row">Resize Rel Y</th><td>0 to 2</td><td>1</td><td>Inert.</td></tr>
+<tr><th scope="row">Shift Mocha: X &amp; Y</th><td>A point on the layer</td><td>Center</td><td>Inert.</td></tr>
+<tr><th scope="row">Dilate Mocha</th><td>-100 to 100 (slider stops at -20 to 20)</td><td>0</td><td>Inert.</td></tr>
+<tr><th scope="row">Dilation Quality</th><td>Fast, High</td><td>Fast</td><td>Inert.</td></tr>
+<tr><th scope="row">Bypass Mocha</th><td>On or off</td><td>Off</td><td>Inert.</td></tr>
+<tr><th scope="row">Show Mocha Only</th><td>On or off</td><td>Off</td><td>Inert.</td></tr>
+<tr><th scope="row">Combine Masks</th><td>Union, Intersect, Mocha Only</td><td>Union</td><td>Inert.</td></tr>
+</tbody></table></div></details>
+
+<details><summary>Animation</summary><div class="scroll"><table class="ref"><thead><tr><th scope="col">Control</th><th scope="col">Range</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody>
+<tr><th scope="row">Time (s)</th><td>Any number</td><td>0</td><td>The clock for Atmosphere Speed. Add the expression <code>time - thisLayer.startTime</code> so atmosphere drift moves. Added at the end of the panel; not part of the original S_Glow controls.</td></tr>
+</tbody></table></div></details>
+</section>
+
+<section id="speed">
+  <h2>Speed and quality</h2>
+  <p>EC Prism Glow runs on the CPU inside EffectCraft's plug-in sandbox, which is an interpreter, so it is slower than a native plug-in. In testing on a server, a 1080p frame at default settings took under 200 ms. Your machine will differ.</p>
+  <ul>
+    <li>Preview at half or quarter resolution while you design.</li>
+    <li>A bigger Glow Width costs more, because it widens every octave of the blur pyramid.</li>
+    <li>Atmosphere Amp above 0 adds a noise pass; leave it at 0 for the cheapest render.</li>
+  </ul>
+</section>
+
+<section id="own">
+  <h2>Save your own preset</h2>
+  <div class="callout warn"><p><strong>The Presets folder isn't there until you make it.</strong> Installing EffectCraft doesn't create it. EffectCraft reads presets from exactly this folder:</p></div>
+  <div class="paths"><div class="os"><h3>Windows</h3><div class="pathrow"><code>%USERPROFILE%\Documents\EffectCraft\Presets</code><button type="button" class="copy" data-copy="%USERPROFILE%\Documents\EffectCraft\Presets" aria-label="Copy Windows path">Copy</button></div></div><div class="os"><h3>macOS</h3><div class="pathrow"><code>~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="~/Documents/EffectCraft/Presets" aria-label="Copy macOS path">Copy</button></div></div><div class="os"><h3>Linux</h3><div class="pathrow"><code>~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="~/Documents/EffectCraft/Presets" aria-label="Copy Linux path">Copy</button></div></div></div>
+  <p>On Windows that means <code>C:\Users\&lt;your user name&gt;\Documents\EffectCraft\Presets</code>.</p>
+  <h3>Make the Presets folder on Windows</h3>
+  <ol class="steps">
+    <li>Open File Explorer. Click the address bar, type <code>%USERPROFILE%</code> and press Enter. You're now in <code>C:\Users\&lt;your user name&gt;</code>.</li>
+    <li>Open <strong>Documents</strong>. If there's no Documents folder there, make one named <code>Documents</code>.</li>
+    <li>Inside Documents, make a new folder named <code>EffectCraft</code>.</li>
+    <li>Inside EffectCraft, make a new folder named <code>Presets</code>.</li>
+  </ol>
+  <div class="callout"><p><strong>OneDrive:</strong> even if Windows keeps your Documents in OneDrive, EffectCraft still looks in <code>C:\Users\&lt;you&gt;\Documents</code>, not in <code>OneDrive\Documents</code>. Step 1 takes you to the right place.</p><p>To check, open the Effects &amp; Presets panel menu, choose <strong>Copy Presets Folder Path</strong>, and paste it into the File Explorer address bar. That's the folder EffectCraft reads.</p></div>
+  <p>On macOS or Linux, this Terminal line makes it:</p>
+  <div class="paths"><div class="os"><h3>macOS / Linux</h3><div class="pathrow"><code>mkdir -p ~/Documents/EffectCraft/Presets</code><button type="button" class="copy" data-copy="mkdir -p ~/Documents/EffectCraft/Presets" aria-label="Copy the macOS / Linux command">Copy</button></div></div></div>
+  <h3>Save it</h3>
+  <ol class="steps">
+    <li>Set up EC Prism Glow on a layer the way you like it.</li>
+    <li>Select <strong>EC Prism Glow</strong> in Effect Controls.</li>
+    <li>Choose <strong>Animation &gt; Save Animation Preset…</strong> and save the file in the Presets folder.</li>
+    <li>In the Effects &amp; Presets panel menu, choose <strong>Refresh List</strong>. Your preset shows up under <strong>* Animation Presets</strong>.</li>
+  </ol>
+</section>
+
+<section id="trouble">
+  <h2>If something goes wrong</h2>
+  <dl class="faq-list">
+    <dt>There is no glow on a frame.</dt>
+    <dd>Lower Threshold, raise Brightness, or check the layer actually has bright pixels. Set Show to Threshold to see exactly what passes.</dd>
+    <dt>The atmosphere texture doesn't move.</dt>
+    <dd>Add the expression <code>time - thisLayer.startTime</code> to Time (s). See the Animation row under Controls.</dd>
+    <dt>The Mocha mask block does nothing.</dt>
+    <dd>Expected — EffectCraft's plug-in format has no tracking-mask input. See "What this is and isn't" below.</dd>
+    <dt>EC Prism Glow isn't in the Effects list.</dt>
+    <dd>The Plug-ins folder must exist and be named exactly <code>Plug-ins</code>. See <a href="#install">Install the plug-in</a>, then restart EffectCraft. The effect is under Stylize. The web version of EffectCraft can't run plug-ins.</dd>
+    <dt>I see "an effect with this id is already registered".</dt>
+    <dd>The plug-in is already loaded, usually because it is in the Plug-ins folder and you also loaded it from the menu. Nothing to fix.</dd>
+  </dl>
+</section>
+
+<section id="limits">
+  <h2>What this is and isn't</h2>
+  <ul>
+    <li><strong>Close by design, not pixel-proven.</strong> Every control name, default, range and declaration order follows Sapphire's S_Glow panel. The render math (multi-octave gaussian pyramid, power-law falloff, HDR-safe Screen blend) was built and checked against Boris FX's own published description of S_Glow's documented behavior, with an automated test for each documented claim. It has not been compared pixel-for-pixel against a real Sapphire render.</li>
+    <li><strong>Independent.</strong> Contains no Boris FX code or assets, and isn't affiliated with or endorsed by Boris FX. The name "S_Glow" is used only to say what this plug-in is modeled on.</li>
+    <li><strong>No tracking-mask input.</strong> EffectCraft's plug-in format can't take a Mocha tracking project as an input, so the whole Mocha Mask block is declared (to keep the exact control layout) but does nothing.</li>
+    <li><strong>Expand Borders, Invert Mask and Show Glow Width are inert</strong> for the same reason: they depend on reading extra border pixels or a separate mask layer, which EffectCraft's plug-in format doesn't expose.</li>
+    <li><strong>CPU only.</strong> Runs in EffectCraft's interpreted plug-in sandbox.</li>
+    <li><strong>Desktop and CLI.</strong> EffectCraft's web version can't run plug-ins.</li>
+  </ul>
+</section>
+
+<section id="comments">
+  <h2>Comments</h2>
+  <p>People who tried it can leave a comment or a like here. Comments are posted on GitHub with a free GitHub account.</p>
+  <p class="cstate" id="cstate" role="status">Loading comments…</p>
+  <ul class="clist" id="clist" data-product="prism-glow"></ul>
+  <div id="utter" data-product="prism-glow"></div>
+  <div class="cbtns">
+    <a class="btn sm" data-comment-link="prism-glow" href="https://github.com/DioEnterRight/ec-plugins/issues/5" target="_blank" rel="noopener">Write a comment on GitHub</a>
+    <a class="btn ghost sm" data-thread="prism-glow" href="https://github.com/DioEnterRight/ec-plugins/issues/5" target="_blank" rel="noopener">Open the GitHub thread</a>
+  </div>
+</section>
+<section id="verify">
+  <h2>Check your download</h2>
+  <p>The SHA-256 of <code>EC_Prism_Glow_v0.1.0.zip</code> is:</p>
+  <p class="sha">b4e7cfc6ff0e3c843c0a0f7e7dac66b236bdabbeeb64c6539d4d7c1571ae2b67</p>
+  <p>On Windows, run <code>Get-FileHash EC_Prism_Glow_v0.1.0.zip</code> in PowerShell and compare.</p>
+</section>
+
+</main>
+</div>
+</div>
+<footer>
+  <div class="in">
+    <p>Store by DioEnterRight. EC Twitch, EC Deep Glow 2 and EC Prism Glow are made by DioEnterRight, © 2026, all rights reserved: free to download and use with EffectCraft, including in paid work, but not to redistribute or resell. EC Outline Glow and EC Neon Outline are made by Slizzy and upgraded by DioEnterRight.</p>
+    <p>Independent work. Not affiliated with or endorsed by Video Copilot, Deep Glow, Boris FX or Sapphire, or EffectCraft. The names are used only to say what each effect is inspired by.</p>
+    <p>Download, like and comment numbers are read live from this project's GitHub page. There is no database.</p>
+  </div>
+</footer>
+<script src="../assets/config.js"></script>
+<script src="../assets/store.js"></script>
+</body>
+</html>

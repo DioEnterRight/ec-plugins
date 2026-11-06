@@ -15,7 +15,9 @@
 [data-accent=dg]{--acc:var(--amb)}
 [data-accent=og]{--acc:var(--cyan)}
 [data-accent=sn]{--acc:#A23BFF}
+[data-accent=pg]{--acc:#FF8A1E}
 @media (prefers-color-scheme:dark){[data-accent=sn]{--acc:#C78BFF}}
+[data-accent=pg] .btn:hover{color:#1A1000}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
