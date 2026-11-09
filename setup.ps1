@@ -18,7 +18,7 @@ if ($n1 -ne "1" -or $n2 -ne "2" -or $n3 -ne "3" -or $n4 -ne "4") { Write-Warning
 try { gh issue pin $n1 -R $repo; gh issue pin $n2 -R $repo } catch { Write-Host "Could not pin the issues. That is fine." }
 
 # The downloads. The page counts downloads from these release files.
-gh release create twitch-v1.2.0 downloads/EC_Twitch_v1.2.0.zip -R $repo -t "EC Twitch 1.2.0" -n "EC Twitch 1.2.0. Unzip it and follow INSTALL.txt."
+gh release create twitch-v1.2.1 downloads/EC_Twitch_v1.2.1.zip -R $repo -t "EC Twitch 1.2.1" -n "EC Twitch 1.2.1. Unzip it and follow INSTALL.txt."
 gh release create deep-glow-2-v5.1.0 downloads/EC_Deep_Glow_2_v5.1.0.zip -R $repo -t "EC Deep Glow 2 5.1.0" -n "EC Deep Glow 2 5.1.0. Unzip it and follow INSTALL.txt."
 gh release create outline-glow-v1.4.0 downloads/EC_Outline_Glow_v1.4.0.zip -R $repo -t "EC Outline Glow 1.4.0" -n "EC Outline Glow 1.4.0. Unzip it and follow INSTALL.txt."
 gh release create neon-outline-v3.2.0 downloads/EC_Neon_Outline_v3.2.0.zip -R $repo -t "EC Neon Outline 3.2.0" -n "EC Neon Outline 3.2.0. Unzip it and follow INSTALL.txt."

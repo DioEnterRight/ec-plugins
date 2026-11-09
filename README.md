@@ -4,7 +4,7 @@ Free plug-ins for EffectCraft, with a small store page.
 
 | Plug-in | Version | What it is |
 |---|---|---|
-| EC Twitch | 1.2.0 | Random hits of blur, color, light, scale, slide and time, with 25 presets |
+| EC Twitch | 1.2.1 | Random hits of blur, color, light, scale, slide and time, with 25 presets |
 | EC Deep Glow 2 | 5.1.0 | HDR glow with a hot core and a long soft halo |
 | EC Outline Glow | 1.4.0 | Glowing outline with seven Glow Types (made by Slizzy, upgraded by DioEnterRight) |
 | EC Neon Outline | 3.2.0 | Three-colour neon line with electric flicker (made by Slizzy, upgraded by DioEnterRight) |

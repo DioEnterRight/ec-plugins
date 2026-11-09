@@ -1,0 +1,100 @@
+{
+  "packages": [
+    {
+      "id": "org.dexter.ec-twitch",
+      "name": "EC Twitch",
+      "author": "DioEnterRight",
+      "description": "Random hits of blur, color, light, scale, slide and time, for flicker, shake and glitch looks.",
+      "repo": "https://github.com/DioEnterRight/ec-plugins",
+      "tags": [
+        "stylize",
+        "glitch",
+        "motion"
+      ],
+      "versions": [
+        {
+          "version": "1.2.1",
+          "api": 1,
+          "url": "https://github.com/DioEnterRight/ec-plugins/releases/download/twitch-v1.2.1/ec_twitch.wasm",
+          "sha256": "c02c6894e1c56c9c962c80e5a44fa4d095c3c2a93513aab0b13928264ca2504a",
+          "size": 41197,
+          "effects": [
+            "org.dexter.ec-twitch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "org.effectcraft.open.deep-glow-2",
+      "name": "EC Deep Glow 2",
+      "author": "DioEnterRight",
+      "description": "HDR glow with a hot core and a long soft halo.",
+      "repo": "https://github.com/DioEnterRight/ec-plugins",
+      "tags": [
+        "stylize",
+        "light",
+        "glow"
+      ],
+      "versions": [
+        {
+          "version": "5.1.0",
+          "api": 1,
+          "url": "https://github.com/DioEnterRight/ec-plugins/releases/download/deep-glow-2-v5.1.0/ec_deep_glow_2.wasm",
+          "sha256": "1726cef4a674a20b74e696d8d479f3ea8755f39c545be73ab7c850ef686015e4",
+          "size": 106738,
+          "effects": [
+            "org.effectcraft.open.deep-glow-2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "org.neonforge.outline-glow",
+      "name": "EC Outline Glow",
+      "author": "DioEnterRight",
+      "description": "Glowing outline with seven Glow Types (made by Slizzy, upgraded by DioEnterRight).",
+      "repo": "https://github.com/DioEnterRight/ec-plugins",
+      "tags": [
+        "stylize",
+        "light",
+        "glow"
+      ],
+      "versions": [
+        {
+          "version": "1.4.0",
+          "api": 1,
+          "url": "https://github.com/DioEnterRight/ec-plugins/releases/download/outline-glow-v1.4.0/ec_outline_glow.wasm",
+          "sha256": "945cc36f85508b61a49c0b312758da724a0e84f67b9bedb65d8037a7c8484ce2",
+          "size": 29806,
+          "effects": [
+            "org.neonforge.outline-glow"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "org.slizzy.neon-outline.v3",
+      "name": "EC Neon Outline",
+      "author": "DioEnterRight",
+      "description": "Three-colour neon line with electric flicker (made by Slizzy, upgraded by DioEnterRight).",
+      "repo": "https://github.com/DioEnterRight/ec-plugins",
+      "tags": [
+        "stylize",
+        "light",
+        "glow"
+      ],
+      "versions": [
+        {
+          "version": "3.2.0",
+          "api": 1,
+          "url": "https://github.com/DioEnterRight/ec-plugins/releases/download/neon-outline-v3.2.0/ec_neon_outline.wasm",
+          "sha256": "3ef4b62c59b3515cc22a3dc89b058a1812f0639a8ed2a4da5b99f5e1b7f02f90",
+          "size": 25848,
+          "effects": [
+            "org.slizzy.neon-outline.v3"
+          ]
+        }
+      ]
+    }
+  ]
+}
